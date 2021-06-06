@@ -1,0 +1,334 @@
+.footer {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+
+  p {
+    color: #b2b1b1;
+
+    a {
+      color: #b2b1b1;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+
+    .sideA {
+      display: flex;
+      justify-content: space-between;
+
+      &__inner {
+        margin-left: 30px;
+      }
+
+    }
+
+    .sideB {
+      display: flex;
+      justify-content: space-between;
+      width: 520px;
+
+      &__img {
+        width: 200px;
+        height: 50px;
+        margin-left: 10px;
+
+
+        img {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+  }
+
+
+  &__social {
+    display: flex;
+    width: 100%;
+    padding: 60px 0 30px 0;
+    border-bottom: 1px solid lightgray;
+
+
+    .social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+      padding: 8px;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0 !important;
+      }
+
+
+      &__item {
+        width: 32px;
+        height: 32px;
+        fill: #181818;
+        cursor: pointer;
+        transition: all .1s ease-in-out;
+
+        &:hover {
+          fill: darken(lawngreen, 15%);
+
+        }
+      }
+    }
+  }
+
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    font-size: 14px;
+
+    .roots {
+
+    }
+
+    .politic {
+      margin: 0 auto;
+
+      p {
+
+        a {
+          border-bottom: 1px solid white;
+        }
+      }
+
+
+    }
+
+    .developer {
+      margin-left: auto;
+    }
+  }
+}
+
+
+@media (max-width: 1354px) {
+  .footer {
+    padding: 0 30px 0 30px;
+  }
+}
+
+@media (max-width: 990px) {
+
+  .footer {
+    padding: 0 30px 0 30px;
+
+    &__contacts {
+      display: flex;
+      justify-content: space-between;
+
+      .sideA {
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+
+
+        &__inner {
+          margin-left: 0;
+        }
+
+      }
+
+      .sideB {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 200px;
+        height: 160px;
+
+        &__img {
+          width: 168px;
+          height: auto;
+          padding-left: 0;
+
+
+          img {
+            object-fit: contain;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+      }
+    }
+
+
+    &__bottom {
+      display: block;
+      align-items: center;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+
+
+      .roots {
+
+
+      }
+
+      .politic {
+        margin: 5px auto 0 auto;
+
+
+        p {
+
+          a {
+            border-bottom: 1px solid white;
+          }
+        }
+
+
+      }
+
+      .developer {
+        margin-left: auto;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 0 30px 0 30px;
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 30px;
+
+
+      .sideA {
+        display: flex;
+        flex-direction: row;
+        justify-content: normal;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 30px;
+
+        p {
+          font-size: 12px;
+        }
+
+
+        &__inner {
+          margin-left: 30px;
+        }
+
+      }
+
+      .sideB {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+        margin: 0 auto;
+        border-bottom: 1px solid lightgray;
+
+        &__img {
+          width: 200px;
+          height: 50px;
+
+          img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+      }
+    }
+
+
+    &__social {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 30px 0 30px 0;
+      border-bottom: 1px solid lightgray;
+
+
+      .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: white;
+        padding: 8px;
+        margin-left: 10px;
+
+        &:first-child {
+          margin-left: 0 !important;
+        }
+
+
+        &__item {
+          width: 32px;
+          height: 32px;
+          fill: #181818;
+          cursor: pointer;
+          transition: all .1s ease-in-out;
+
+          &:hover {
+            fill: darken(lawngreen, 15%);
+
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      display: block;
+      align-items: center;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 12px;
+
+
+      .roots {
+
+
+      }
+
+      .politic {
+        margin: 5px auto 0 auto;
+
+
+        p {
+
+          a {
+            border-bottom: 1px solid white;
+          }
+        }
+
+
+      }
+
+      .developer {
+        margin-left: auto;
+        margin-top: 5px;
+      }
+    }
+  }
+
+}

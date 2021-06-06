@@ -1,0 +1,100 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $black;
+  background-color: #f3f3f3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Flame", sans-serif!important;
+}
+
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+nav,
+button {
+  color: $black;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: "Rotonda", sans-serif;
+
+
+}
+
+a {
+  margin: 0!important;
+  padding: 0!important;
+  height: 100%;
+}
+
+a:hover {
+  background-color: transparent!important;
+}
+
+button:focus {
+  background-color: transparent;
+}
+
+li.active {
+  background-color: transparent!important;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+a, a:hover, {
+  text-decoration: none;
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}

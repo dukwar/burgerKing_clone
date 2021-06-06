@@ -1,0 +1,52 @@
+.navbarMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 90px;
+  padding: 0;
+
+
+
+  ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2px!important;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-weight: 600;
+      margin-left: 1.5rem!important;
+      transition: all .1s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: darken(lawngreen, 15%);
+      }
+
+
+      &.active {
+        box-shadow: 0px 2px 0px 0px rgba(131, 175, 60, 0.75);
+
+      }
+
+
+    }
+  }
+}
+
+@media (max-width: 1261px) {
+
+  .navbarMain {
+    display: none;
+  }
+
+}
+
+
+

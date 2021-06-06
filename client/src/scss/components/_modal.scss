@@ -1,0 +1,164 @@
+
+
+.modalMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  &__window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    height:70vh;
+    width: 690px;
+    background-color: #fdfdfd;
+    padding: 30px;
+    overflow: scroll;
+    animation: modal__windowOpen .3s ease forwards;
+
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &__cancel {
+      margin-left: auto;
+      cursor: pointer;
+      transition: all .1s linear;
+     &:hover {
+       fill: darken(lawngreen, 15%);
+     }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+
+    }
+  }
+
+  &__group {
+    display: flex;
+    justify-content: center;
+    background-color: #b6b6b6;
+    border-radius:25px;
+    width:300px;
+    height: 50px;
+    margin-left: auto;
+
+  }
+
+  &__body {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    h3 {
+      width: 350px;
+      line-height: 28px;
+    }
+
+
+
+
+
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    .accept {
+      width: 450px;
+    }
+  }
+
+
+
+}
+
+
+.regModal {
+  width: 100%;
+
+  margin-top: 5rem;
+
+  .input-field {
+    padding: 0!important;
+  }
+
+  &__input {
+    border-bottom: 1px solid darken(lightgray, 15%) !important;
+
+    &:focus {
+      border-bottom: 1px solid darken(lawngreen, 15%) !important;
+
+      box-shadow: 0 1px 0 0 darken(lawngreen, 15%) !important;
+    }
+  }
+
+  &__input + label {
+    color: darken(lightgray, 15%) !important;
+  }
+
+  &__input:focus + label {
+    color: darken(lawngreen, 15%) !important;
+  }
+}
+
+/* animation */
+.fade-enter-active {
+  animation: slideUp 500ms forwards;
+}
+
+.fade-exit-active {
+  animation: slideDown 500ms forwards;
+}
+
+
+@keyframes modal__windowOpen {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(600px);
+  }
+
+}
