@@ -10,7 +10,7 @@ import Preloader from "../componentHelpers/Preloader/Preloader";
 
 function Home() {
 
-    const [loading, setLoading] = useState(true)
+    console.log('HOME RENDER')
     const [activeLi, setActiveLi] = useState(0)
     const {fixed} = useFixed()
 
@@ -18,10 +18,8 @@ function Home() {
     const dispatch = useDispatch()
     const ulRef = useRef()
 
-    const {categories} = useSelector(({burgers}) => {
-        return {
-            categories: burgers?.categories
-        }
+    const categories = useSelector(({burgers}) => {
+        return burgers?.categories
     })
 
     const handleOffset = ({target}, name, index) => {
@@ -45,14 +43,6 @@ function Home() {
     }, [dispatch, request])
 
 
-    setTimeout(() => {
-        setLoading(false)
-
-    }, 2000)
-
-    if (loading) {
-        return <Preloader/>
-    }
 
     const classes = classNames(
         "content__top",
@@ -67,7 +57,7 @@ function Home() {
                 <div className="containerMain">
                     <div className="content__top__menu">
                         <ul id="scrollUl" ref={ulRef}>
-                            {categories.map(({name}, index) => {
+                            {categories && categories.map(({name}, index) => {
                                 return <li className={activeLi === index && "activeLi"}
                                            onClick={(el) => handleOffset(el, name, index)}>{name}</li>
                             })}

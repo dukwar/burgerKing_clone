@@ -1,3 +1,5 @@
+@import '../variables';
+
 .work {
   display: flex;
   width: 100%;
@@ -8,7 +10,7 @@
     h1 {
       width: 695px;
       text-transform: uppercase;
-      color: #602403;
+      color: $work-text;
       font-weight: 700;
       font-size: 62px;
       line-height: 110%;
@@ -17,7 +19,7 @@
     p {
       width: 544px;
       margin: 32px 0 40px;
-      color: #602403;
+      color: $work-text;
       font-size: 30px;
       line-height: 120%;
       font-family: 'Flame-Regular', sans-serif;
@@ -37,20 +39,17 @@
     align-items: flex-end;
     width: 598px;
 
-
     img {
       width: 100%;
       height: 100%;
     }
-
   }
-
 }
 
 .vacancy {
   width: 100%;
   margin: 0 auto;
-  background-color: #fdfdfd;
+  background-color: $work-vacancy;
 
   &__inner {
     max-width: 1340px;
@@ -68,19 +67,17 @@
 
   &__list {
     padding: 0 220px;
-
-
   }
 
   &__item {
-    padding-right: 50px;
     width: 100%;
+    padding-right: 50px;
     border-radius: 12px;
     cursor: pointer;
     transition: all .3s ease-in;
 
     &.active {
-      background-color: #f3f3f3;
+      background-color: $main-background;
     }
 
     .spoiler__title {
@@ -94,11 +91,12 @@
       }
 
       h3 {
+        position: relative;
+        padding: 40px 30px 40px 24px;
         font-size: 34px;
         color: #3c3c3b;
         line-height: 1.2;
-        padding: 40px 30px 40px 24px;
-        position: relative;
+
       }
 
       .spoiler__toggle {
@@ -138,18 +136,14 @@
           width: 16px;
           transform: rotate(0);
         }
-
-
-
       }
-
     }
 
 
     .spoiler {
+      max-height: 0;
       overflow: hidden;
       padding: 0 20px;
-      max-height: 0;
       margin-left: 40px;
       transition: all .3s ease-in;
 
@@ -196,6 +190,7 @@
 
     &__content {
       max-width: 695px;
+
       h1 {
         width: 100%;
         text-transform: uppercase;
@@ -233,7 +228,6 @@
   .vacancy {
     width: 100%;
     margin: 0 auto;
-    background-color: #fdfdfd;
     transition: all .3s ease-in;
 
     &__inner {
@@ -278,8 +272,6 @@
         }
 
       }
-
-
 
 
       .spoiler {
@@ -338,6 +330,7 @@
 
     &__content {
       max-width: 695px;
+
       h1 {
         width: 100%;
         text-transform: uppercase;
@@ -373,29 +366,13 @@
   }
 
 
-
   .vacancy {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #fdfdfd;
-
-    &__inner {
-      max-width: 1340px;
-      margin: 0 auto;
-      padding: 64px 0 46px;
-    }
 
     h2 {
       font-weight: 700;
       font-size: 30px;
       line-height: 110%;
       padding: 0 220px 46px 20px;
-
-    }
-
-    &__list {
-      padding: 0;
-
 
     }
 
@@ -411,6 +388,8 @@
 
 
       .spoiler__title {
+        position: relative;
+
         h3 {
           font-size: 20px;
           color: #3c3c3b;
@@ -419,19 +398,58 @@
           position: relative;
 
         }
-      }
 
+        .spoiler__toggle {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 30px;
+          margin-right: 2px;
+          transition: all .3s linear;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 2px;
+            background-color: #181818;
+            transform: rotate(50deg);
+            border-radius: 100px;
+            transition: all .3s linear;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 6px;
+            width: 15px;
+            height: 2px;
+            background-color: #181818;
+            transform: rotate(-50deg);
+            border-radius: 100px;
+            transition: all .3s linear;
+          }
+
+          &.active:before, &.active:after {
+            width: 13px;
+            transform: rotate(0);
+          }
+        }
+      }
 
 
       .spoiler {
         overflow: hidden;
-        padding: 0 20px;
+        padding: 0 5px;
         max-height: 0;
-        margin-left: 40px;
+        margin-left: 30px;
         transition: all .3s ease-in;
 
         &.active {
-          max-height: 512px;
+          max-height: 700px;
         }
 
         & h4:first-of-type {

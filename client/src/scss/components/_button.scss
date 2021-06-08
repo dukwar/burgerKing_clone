@@ -1,20 +1,25 @@
 @import '../variables';
 
 .button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  min-height: 45px;
   background-color: $cart-button;
   border-radius: 30px;
   padding: 10px 20px;
-  min-width: 100px;
-  min-height: 45px;
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
   @include noselect();
 
+  &:focus {
+    background-color: orange;
+  }
+
   &--exit {
     background-color: transparent;
-
 
     p {
       transition: all .1s linear!important;
@@ -42,6 +47,10 @@
     height: 40px;
     padding: 5px 8px;
     margin-top: 15px;
+
+    &:focus {
+      background-color: transparent;
+    }
 
     &:hover {
       background: none!important;
@@ -87,7 +96,10 @@
     }
   }
 
-  &--disabled {
+  &--modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     width: 100%;
     height: 100%;
@@ -100,7 +112,7 @@
     }
   }
 
-  &__footer {
+  &__modalFooter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +146,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    max-width: 200px;
     height: 50px;
 
   }
@@ -275,28 +287,49 @@
 @media (max-width: 654px) {
 
   .button {
-    padding: 5px 10px!important;
+    padding: 10px 15px!important;
     min-width: 60px;
     min-height: 35px;
-  }
 
-  .button--exit {
-    background-color: orange;
-    padding: 5px 5px;
-    border-radius: 5px;
+    &--disabled {
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      font-weight: 500;
+      color: black!important;
 
-    &:hover {
-      background-color: orange!important;
-    }
-
-    p {
-      color: white;
-
-      &:hover {
-        color: white!important;
+      p {
+        font-size: 14px;
       }
     }
 
-  }
+    &--exit {
+      background-color: orange;
+      padding: 5px 5px;
+      border-radius: 5px;
 
+      &:hover {
+        background-color: orange!important;
+      }
+
+      p {
+        color: white;
+
+        &:hover {
+          color: white!important;
+        }
+      }
+
+    }
+
+    &__footer {
+      width: 100%;
+
+      h3 {
+        font-weight: 500;
+        font-size: 20px;
+        color: $white!important;
+      }
+    }
+  }
 }

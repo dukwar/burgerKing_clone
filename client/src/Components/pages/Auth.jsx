@@ -21,21 +21,20 @@ const Auth = () => {
     return (
         <>
 
-            <div className="reg row">
-                <div className="reg__background col s6">
-                    <img src={logo} alt=""/>
+            <div className="auth">
+                <div className="auth__background">
                 </div>
-                <div className="reg__form col s6">
-                    <div className="row">
-                        <h1 className="col s6 offset-s1">Приготовься к самому яркому обеду<br/> в своей жизни!</h1>
-                        <h2 className="col s9 offset-s1">Присоединяйтесь к нашему сообществу прямо сейчас! </h2>
-                    </div>
+                <div className="auth__form">
+                    <div className="auth__darken"></div>
 
-
-
-                    <div className="reg__form__group row">
-                        <Button onClick={handleActiveOpen} className="button--register col  offset-s1">
-                            <h3>Войти</h3>
+                    <div className="auth__form__group">
+                        <div className="auth__text">
+                            <h1>Get ready for the brightest lunch
+                                <br/>In my life!</h1>
+                            <h2>Join our community now! </h2>
+                        </div>
+                        <Button onClick={handleActiveOpen} className="button--register">
+                            <h3>To come in</h3>
                         </Button>
                     </div>
                 </div>

@@ -2,9 +2,7 @@ import React from "react";
 import {Facebook, Instagram, Vkontakte, Youtube} from "./componentHelpers/Sprites";
 
 
-
 const Footer = () => {
-
 
     return (
         <>
@@ -22,13 +20,13 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="sideB">
-                            <div className="sideB__img" ><img
+                            <div className="sideB__img"><img
                                 src="https://burgerking.ru/images/app_store.svg"
                                 alt="App Store"/></div>
-                            <div className="sideB__img" >
+                            <div className="sideB__img">
                                 <img src="https://burgerking.ru/images/google_play.png"
                                      alt="Google Play"/></div>
-                            <div className="sideB__img" ><img
+                            <div className="sideB__img"><img
                                 src="https://burgerking.ru/images/huawei.png"
                                 alt="Huawei App Gallery"/></div>
                         </div>
@@ -39,7 +37,8 @@ const Footer = () => {
                             <Instagram className="social__item"/>
                         </div>
                         <div className="social">
-                            <Facebook className="social__item"/>                        </div>
+                            <Facebook className="social__item"/>
+                        </div>
                         <div className="social">
                             <Vkontakte className="social__item"/>
                         </div>
@@ -50,7 +49,7 @@ const Footer = () => {
                     <div className="footer__bottom">
                         <div className="roots">
                             <p>
-                                © ООО «Бургер Рус», 2021. Все права защищены.<br />
+                                © ООО «Бургер Рус», 2021. Все права защищены.<br/>
                                 TM & Copyright 2021 Burger King Corporation. All Rights Reserved.
                             </p>
                         </div>
@@ -66,7 +65,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </>

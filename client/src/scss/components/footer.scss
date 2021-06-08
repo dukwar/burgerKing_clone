@@ -1,13 +1,14 @@
+@import '../variables';
+
 .footer {
   width: 100%;
   height: 100%;
-  background-color: #222222;
+  background-color: $footer-background;
 
   p {
-    color: #b2b1b1;
-
+    color: $footer-text;
     a {
-      color: #b2b1b1;
+      color: $footer-text;
     }
   }
 
@@ -23,7 +24,6 @@
       &__inner {
         margin-left: 30px;
       }
-
     }
 
     .sideB {
@@ -36,14 +36,12 @@
         height: 50px;
         margin-left: 10px;
 
-
         img {
           object-fit: contain;
           width: 100%;
           height: 100%;
         }
       }
-
     }
   }
 
@@ -53,7 +51,6 @@
     width: 100%;
     padding: 60px 0 30px 0;
     border-bottom: 1px solid lightgray;
-
 
     .social {
       display: flex;
@@ -93,21 +90,14 @@
     padding: 30px 0;
     font-size: 14px;
 
-    .roots {
-
-    }
-
     .politic {
       margin: 0 auto;
 
       p {
-
         a {
           border-bottom: 1px solid white;
         }
       }
-
-
     }
 
     .developer {
@@ -163,40 +153,26 @@
             height: auto;
           }
         }
-
       }
     }
 
-
     &__bottom {
       display: block;
-      align-items: center;
       text-align: center;
       padding: 30px 0;
       font-size: 14px;
 
-
-      .roots {
-
-
-      }
-
       .politic {
         margin: 5px auto 0 auto;
 
-
         p {
-
           a {
             border-bottom: 1px solid white;
           }
         }
-
-
       }
 
       .developer {
-        margin-left: auto;
         margin-top: 5px;
       }
     }
@@ -244,8 +220,8 @@
         border-bottom: 1px solid lightgray;
 
         &__img {
-          width: 200px;
-          height: 50px;
+          width: 140px;
+          height: 40px;
 
           img {
             object-fit: contain;
@@ -253,10 +229,8 @@
             height: 100%;
           }
         }
-
       }
     }
-
 
     &__social {
       display: flex;
@@ -281,7 +255,6 @@
           margin-left: 0 !important;
         }
 
-
         &__item {
           width: 32px;
           height: 32px;
@@ -304,24 +277,15 @@
       padding: 30px 0;
       font-size: 12px;
 
-
-      .roots {
-
-
-      }
-
       .politic {
         margin: 5px auto 0 auto;
 
 
         p {
-
           a {
             border-bottom: 1px solid white;
           }
         }
-
-
       }
 
       .developer {
@@ -330,5 +294,4 @@
       }
     }
   }
-
 }

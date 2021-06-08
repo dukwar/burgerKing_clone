@@ -67,12 +67,12 @@ export const AddBurger = () => {
         setTimeout(() => {
             const elems = document.querySelectorAll("select");
             window.M.FormSelect.init(elems);
-            if (formik.values.email !== '' || formik.values.password !== '') {
+            if (formik.values.name !== '' || formik.values.value !== '') {
                 window.M.updateTextFields()
             }
         }, 600)
 
-    },[toggle, activeBut, formik.values.email, formik.values.password])
+    },[toggle, activeBut, formik.values.name, formik.values.value])
 
 
     return (
@@ -81,12 +81,12 @@ export const AddBurger = () => {
             <div className="modalMain__header">
                 <div className="modalMain__group">
                     <Button onClick={handleActiveBut}
-                            className="button--disabled" activeBut={activeBut}>
+                            className="button--modalHeader" activeBut={activeBut}>
                          Бургер
                     </Button>
 
                     <Button  onClick={handleActiveBut}
-                             className="button--disabled" activeBut={!activeBut}>
+                             className="button--modalHeader" activeBut={!activeBut}>
                        Категорию
                     </Button>
                 </div>
@@ -175,7 +175,7 @@ export const AddBurger = () => {
 
                                 <div className="modalMain__footer">
 
-                                    <Button className="button__footer">
+                                    <Button className="button__modalFooter">
                                         <h3>Добавить бургер</h3>
                                     </Button>
                                 </div>
@@ -218,7 +218,7 @@ export const AddBurger = () => {
 
                                 <div className="modalMain__footer">
 
-                                    <Button className="button__footer">
+                                    <Button className="button__modalFooter">
                                         <h3>Добавить категорию</h3>
                                     </Button>
                                 </div>

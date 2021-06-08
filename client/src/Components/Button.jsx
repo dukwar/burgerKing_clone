@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 
-function Button({className, onClick, outline, children, activeBut, data, id}) {
+function Button({className, onClick, children, activeBut, data, id}) {
 
     const handleOnClick = (e) => {
         if (id) {
@@ -18,11 +18,7 @@ function Button({className, onClick, outline, children, activeBut, data, id}) {
     const classes = classNames(
         'button',
         className,
-        {
-            'button--outline' : outline,
-            'button__active' : activeBut
-
-        }
+        {'button__active' : activeBut}
 
     )
 

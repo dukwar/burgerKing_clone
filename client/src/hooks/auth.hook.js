@@ -4,8 +4,6 @@ const storageName = 'userData'
 
 export const useAuth = () => {
 
-
-
     const login = useCallback((jwtToken, userId) => {
 
         localStorage.setItem(storageName, JSON.stringify({
@@ -17,8 +15,6 @@ export const useAuth = () => {
 
     const logout = useCallback(() => {
         localStorage.removeItem(storageName)
-
-
     }, [])
 
 

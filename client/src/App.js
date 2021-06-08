@@ -12,13 +12,12 @@ import Footer from "./Components/Footer";
 
 
 function App() {
+    console.log('APP RENDER')
 
-    let location = useLocation()
+    const location = useLocation()
     const dispatch = useDispatch()
-    const {profile} = useSelector(({auth}) => {
-        return {
-            profile: auth.profile
-        }
+    const profile = useSelector(({auth}) => {
+        return auth.profile
     })
     const [ready, setReady] = useState(false)
     const {login, logout, storageName} = useAuth()
@@ -30,7 +29,6 @@ function App() {
 
         if (data && data.token) {
             dispatch(authAction(data))
-            // login(data.token, data.userId)
         }
 
         setTimeout(() => {
@@ -41,7 +39,6 @@ function App() {
 
     if (!ready) {
         return <Preloader />
-
     }
 
     return (
@@ -50,15 +47,14 @@ function App() {
         <>
             <Header login={login} logout={logout} />
             {location.pathname === '/home' && <Slider />}
-
         </>
-
             }
-
             <div className="content">
                 {routes}
             </div>
-            <Footer />
+            {isAuth &&  <Footer />}
+
+
         </div>
 
     );

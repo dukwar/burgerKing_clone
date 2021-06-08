@@ -1,9 +1,10 @@
-.reg {
+@import '../variables';
+
+.auth {
   display: flex;
   align-items: center;
-  margin: 0;
   height: 100vh;
-
+  margin: 0;
 
 
   &__background {
@@ -12,26 +13,79 @@
     justify-content: center;
     width: 50%;
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/img/back-burger.jpg");
+    background-position: center;
     background-color: #6a392b;
+  }
 
-    img {
-      max-width: 60%;
-      height: auto;
-    }
+  &__text {
+    margin-bottom: 3rem;
+    z-index: 10;
   }
 
   &__form {
     width: 45%;
+    padding-left: 3rem;
+
 
     &__group {
       display: flex;
+      flex-direction: column;
       margin-top: 2.5rem;
     }
 
-      h2 {
+    h2 {
       margin-top: 1.2rem;
     }
   }
 
+}
+
+@media (max-width: 1024px) {
+  .auth {
+    &__background {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 100vh;
+    }
+
+    &__darken {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($black, .3);
+
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      padding: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("../../assets/img/back-burger.jpg");
+
+      &__group {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+        padding-left: 2rem;
+        z-index: 10;
+      }
+
+      h1, h2 {
+        color: white;
+        margin-top: 1.2rem;
+      }
+    }
+  }
 }
 

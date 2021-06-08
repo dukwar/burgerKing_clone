@@ -1,86 +1,38 @@
 @import '../variables';
 
 .slider__container {
-  margin-top: 20px;
   width: 100%;
-  background-color: #f3f3f3;
   height: 100%;
+  margin-top: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
+  background-color: $main-background;
   overflow: hidden;
 }
 
 .sliderMain {
-  margin: 0 auto;
   max-width: $container-width;
+  margin: 0 auto;
   position: relative;
-
-
-
-  &__blur {
-    position: absolute;
-    top: 0;
-    right: -60px;
-    z-index: 10;
-    background-color: transparent;
-    width: 40px;
-    height: 340px;
-    box-shadow: -51px -1px 19px 0px rgba(255, 255, 255, 0.5);
-
-  }
-
-
 
   &__block {
     cursor: pointer;
 
-
     img {
       max-width: 570px;
       max-height: 330px;
-
       border-radius: .5rem!important;
       transition: all .2s linear;
-
-
     }
-
   }
-
 }
 
-@media (max-width: 1200px) {
-
-  .slider__container {
-    margin-top: 20px;
-    width: 100%;
-    background-color: #f3f3f3;
-    height: 100%;
-    padding-top: 1vh;
-    padding-bottom: 4vh;
-    overflow: hidden;
-
-  }
-
-
-
-}
 
 @media (max-width: 765px) {
 
   .slider__container {
-    margin-top: 20px;
-    width: 100%;
-    background-color: #f3f3f3;
-    height: 100%;
     padding-top: 0;
-    padding-bottom: 4vh;
-    overflow: hidden;
-
   }
-
-
-
 }
 
 

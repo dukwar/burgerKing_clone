@@ -11,8 +11,6 @@ const WSpoiler = ({id, title, subTitleOne, subTitleTwo, markerTextOne, markerTex
         dispatch(openWork(id))
     }
 
-    console.log(isOpen)
-
     return (
         <>
             <div onClick={handleActiveSpoiler} className={isOpen ? "vacancy__item active" : "vacancy__item"}>

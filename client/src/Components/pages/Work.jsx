@@ -48,10 +48,6 @@ function Work() {
 
                             />
                         })}
-
-
-
-
                     </div>
                 </div>
 

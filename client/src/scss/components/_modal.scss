@@ -1,29 +1,30 @@
-
+@import '../variables';
 
 .modalMain {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba($modal-background, .8);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 
 
   &__window {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 15px;
-    height:70vh;
+    height: 95vh;
     width: 690px;
-    background-color: #fdfdfd;
+    background-color: $white;
+    border-radius: 15px;
     padding: 30px;
-    overflow: scroll;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
     animation: modal__windowOpen .3s ease forwards;
-
   }
 
   &__header {
@@ -33,9 +34,11 @@
     width: 100%;
 
     &__cancel {
+      padding: 4px;
       margin-left: auto;
       cursor: pointer;
       transition: all .1s linear;
+
      &:hover {
        fill: darken(lawngreen, 15%);
      }
@@ -50,29 +53,23 @@
   &__group {
     display: flex;
     justify-content: center;
-    background-color: #b6b6b6;
-    border-radius:25px;
-    width:300px;
+    width: 300px;
     height: 50px;
+    background-color: $main-background;
+    border-radius: 25px;
     margin-left: auto;
-
   }
 
   &__body {
-    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     width: 400px;
+    margin-top: 3rem;
 
     h3 {
       width: 350px;
       line-height: 28px;
     }
-
-
-
-
-
   }
 
   &__footer {
@@ -86,15 +83,11 @@
       width: 450px;
     }
   }
-
-
-
 }
 
 
 .regModal {
   width: 100%;
-
   margin-top: 5rem;
 
   .input-field {
@@ -102,19 +95,16 @@
   }
 
   &__input {
-    border-bottom: 1px solid darken(lightgray, 15%) !important;
-
+    border-bottom: 1px solid darken(lightgray, 15%)!important;
     &:focus {
-      border-bottom: 1px solid darken(lawngreen, 15%) !important;
-
-      box-shadow: 0 1px 0 0 darken(lawngreen, 15%) !important;
+      border-bottom: 1px solid darken(lawngreen, 15%)!important;
+      box-shadow: 0 1px 0 0 darken(lawngreen, 15%)!important;
     }
   }
 
   &__input + label {
     color: darken(lightgray, 15%) !important;
   }
-
   &__input:focus + label {
     color: darken(lawngreen, 15%) !important;
   }
@@ -158,7 +148,45 @@
   }
 
   100% {
-    transform: translateX(600px);
+    transform: translateX(700px);
   }
+
+}
+
+@media (max-width: 624px) {
+
+  .modalMain__window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+    border-radius: 15px;
+    background-color: #fdfdfd;
+    padding: 30px;
+    overflow: scroll;
+    animation: modal__windowOpen .3s ease forwards;
+  }
+
+  .modalMain__body {
+    width: 100%;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h3 {
+      width: 350px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  .modalMain__footer {
+    .accept {
+      width: 100%;
+    }
+  }
+
 
 }

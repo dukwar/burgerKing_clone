@@ -6,28 +6,40 @@
 
 html, body {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 .wrapper {
   min-height: 100vh;
   margin: 0 auto;
-  background-color: #f3f3f3!important;
+  background-color: $main-background!important;
 }
 
+.containerMain {
+  max-width: $container-width;
+  margin: 0 auto;
+
+
+  &--cart {
+    max-width: 820px;
+    margin: 90px auto;
+
+    .content__title {
+      margin: 0;
+    }
+  }
+}
 
 
 .content {
   width: 100%;
   position: relative;
-  background-color: #f3f3f3;
+  background-color: $main-background;
 
 
   &__top {
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: $white;
+    box-shadow: 0px 2px 20px 0px rgba($black, 0.05);
     transition: all .3s linear;
 
     &.fixedBlock {
@@ -36,36 +48,36 @@ html, body {
     }
 
     &__menu {
-      padding: 0 30px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       width: 100%;
       min-height: 70px;
+      padding: 0 30px;
 
       ul {
         display: flex;
         flex-wrap: wrap;
 
         li {
-          font-size: 16px;
-          line-height: 19px;
-          margin: 3px;
-          padding: 6px 10px 10px;
           display: flex;
           align-items: center;
           justify-content: center;
+          margin: 3px;
+          padding: 6px 10px 10px;
           border-radius: 40px;
+          font-size: 16px;
+          line-height: 19px;
           white-space: nowrap;
-          color: #898989;
+          color: $content-menu;
           cursor: pointer;
 
           &.activeLi {
-            background-color: #ffe7c3;
+            background-color: $activeLi;
           }
 
           &:hover {
-            background-color: #ffe7c3;
+            background-color: $activeLi;
           }
         }
       }
@@ -74,8 +86,7 @@ html, body {
 
   &__mid {
     max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    margin: 0 auto 50px auto;
 
     &__title {
       display: flex;
@@ -96,8 +107,6 @@ html, body {
       &__items {
         display: flex;
         flex-wrap: wrap;
-
-
       }
 
       &__item {
@@ -108,13 +117,11 @@ html, body {
           width: 240px;
           height: auto;
 
-
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
-
         }
 
         .item__title {
@@ -122,41 +129,22 @@ html, body {
 
           h3 {
             font-size: 20px;
-           font-weight: 300;
+            font-weight: 300;
           }
-
         }
-
       }
-
     }
   }
-
-
-
 
   &__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-
-
 }
 
-.containerMain {
-  max-width: $container-width;
-  margin: 0 auto;
 
 
-  &--cart {
-    max-width: 820px;
-    margin: 90px auto;
-    .content__title {
-      margin: 0;
-    }
-  }
-}
 
 .cart {
   &__top {
@@ -176,6 +164,7 @@ html, body {
       width: 30px;
       height: 30px;
       margin-right: 10px;
+
       path {
         stroke: $black;
         stroke-width: 1.9;
@@ -208,6 +197,7 @@ html, body {
           stroke: darken($color: #b6b6b6, $amount: 50);
         }
       }
+
       span {
         color: darken($color: #b6b6b6, $amount: 50);
       }
@@ -308,6 +298,7 @@ html, body {
           height: 11.5px;
           position: relative;
         }
+
         &:hover,
         &:active {
           border-color: darken($color: $gray-line, $amount: 80);
@@ -365,6 +356,7 @@ html, body {
 
         svg {
           margin-right: 12px;
+
           path {
             fill: transparent;
             stroke-width: 2;
@@ -423,54 +415,122 @@ html, body {
 
   .content__top {
     width: 100%;
-    background-color:transparent;
+    background-color: transparent;
     box-shadow: none;
     transition: all .1s linear;
 
     &.fixedBlock {
       position: fixed;
-      background-color: #ffffff;
+      background-color: $white;
       top: 4.5rem;
     }
 
     &__menu {
-      padding: 0 30px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       width: 100%;
       height: 70px;
-
+      padding: 0 30px;
 
       ul {
-        overflow-x: hidden;
-        position: relative;
         display: flex;
         flex-wrap: nowrap;
+        position: relative;
+        overflow-x: hidden;
 
         li {
-          font-size: 16px;
-          line-height: 19px;
-          margin: 3px;
-          padding: 6px 10px 10px;
           display: flex;
           align-items: center;
           justify-content: center;
+          margin: 3px;
+          padding: 6px 10px 10px;
           border-radius: 40px;
+          font-size: 16px;
+          line-height: 19px;
           white-space: nowrap;
-          color: #898989;
           cursor: pointer;
 
           &.activeLi {
-            background-color: #ffe7c3;
+            background-color: $activeLi;
           }
 
           &:hover {
-            background-color: #ffe7c3;
+            background-color: $activeLi;
           }
         }
       }
     }
   }
-  
+
+
+  .content__mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+    &__title {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 80px;
+    }
+
+    .category {
+      width: 90%;
+      margin-top: 0;
+      padding: 50px 0;
+      border-bottom: 1px solid $border-bottom;
+
+
+      &__title {
+        margin-left: 0;
+        font-size: 30px;
+        line-height: 60px;
+      }
+
+      &__items {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+
+      }
+
+      &__item {
+        display: flex;
+        width: 100%;
+        margin: 30px 0px 10px;
+
+        .item__img {
+          width: auto;
+          height: auto;
+
+          img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+          }
+
+        }
+
+        .item__content {
+          margin-left: 30px;
+
+
+          .item__title {
+            margin-top: 20px;
+
+            h3 {
+              font-size: 22px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
 }

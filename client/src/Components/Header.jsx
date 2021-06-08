@@ -11,6 +11,7 @@ import {authAction} from "../Redux/actions/auth";
 
 
 const Header = (props) => {
+    console.log('HEADER RENDER')
 
     const {fixed} = useFixed()
     const history = useHistory()
@@ -32,8 +33,8 @@ const Header = (props) => {
     }
 
     useEffect(() => {
-        const el = document.getElementsByTagName('body')
-        isOpen ? el[0].style.overflow = 'hidden' : el[0].style.overflow = 'visible'
+        const el = document.body
+        isOpen ? el.style.overflow = 'hidden' : el.style.overflow = 'visible'
     }, [isOpen])
 
     useEffect(() => {
@@ -72,7 +73,7 @@ const Header = (props) => {
                             </div>
                         </NavLink>
 
-                        <Navbar/>
+                        <Navbar fixed={fixed}/>
                         <Burger onClick={handleOpenDropdown}/>
                         <Button className="button--exit" onClick={handleLogout}>
                             <p>Выйти</p>

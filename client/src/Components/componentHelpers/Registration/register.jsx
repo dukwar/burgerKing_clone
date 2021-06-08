@@ -49,16 +49,17 @@ export const Register = () => {
         onSubmit: (values) => {
             dispatch(openAction())
             alert(JSON.stringify(values, null, 2));
-
             dispatch(authThunk(request, method, values, login, profile))
         }
     })
 
     useEffect(() => {
-        if (formik.values.email !== '' || formik.values.password !== '') {
-            window.M.updateTextFields()
-        }
-    }, [formik])
+        setTimeout(() => {
+            if (formik.values.email !== '' || formik.values.password !== '') {
+                window.M.updateTextFields()
+            }
+        }, 600)
+    },[toggle, activeBut, formik.values.email, formik.values.password])
 
     return (
         <>
@@ -66,13 +67,14 @@ export const Register = () => {
             <div className="modalMain__header">
                 <div className="modalMain__group">
                     <Button onClick={handleActiveBut}
-                            className="button--disabled" activeBut={activeBut}>
-                        Регистрация
+                            className="button--modalHeader" activeBut={activeBut}>
+                        <p>Регистрация</p>
                     </Button>
 
                     <Button onClick={handleActiveBut}
-                            className="button--disabled" activeBut={!activeBut}>
-                        Войти
+                            className="button--modalHeader" activeBut={!activeBut}>
+                        <p>Войти</p>
+
                     </Button>
                 </div>
                 <div onClick={handleActiveOpen} className="modalMain__header__cancel">
@@ -86,13 +88,13 @@ export const Register = () => {
                     classNames="fade"
                 >
                     {toggle ?
-                        <div className={"modalMain__body"}>
-                            <h3>Заполните все поля и будем двигаться дальше!</h3>
+                        <div className="modalMain__body">
+                            <h1>Fill in all the fields and let's move on!</h1>
 
                             <form className="regModal" onSubmit={formik.handleSubmit}>
 
                                 <div className="row">
-                                    <h3>Почта</h3>
+                                    <h3>Email</h3>
                                     <div className="input-field col s12">
                                         <input
                                             id="email"
@@ -102,12 +104,12 @@ export const Register = () => {
                                             value={formik.values.email}
 
                                         />
-                                        <label htmlFor="email">Почта</label>
+                                        <label htmlFor="email">Email</label>
                                     </div>
                                 </div>
 
-                                <div className=" row">
-                                    <h3>Пароль</h3>
+                                <div className="row">
+                                    <h3>Password</h3>
                                     <div className="input-field col s12">
 
                                         <input
@@ -117,7 +119,7 @@ export const Register = () => {
                                             onChange={formik.handleChange}
                                             value={formik.values.password}
                                         />
-                                        <label htmlFor="password">Пароль</label>
+                                        <label htmlFor="password">Password</label>
                                     </div>
                                 </div>
 
@@ -135,8 +137,9 @@ export const Register = () => {
                                         </label>
                                     </div>
                                     <Button id="regOne" onClick={handleMethod} data="register"
-                                            className="button__footer">
-                                        <h3>Зарегистрироваться</h3>
+                                            className="button__modalFooter">
+                                        <h3>Register now
+                                        </h3>
                                     </Button>
                                 </div>
 
@@ -144,12 +147,10 @@ export const Register = () => {
                         </div>
                         :
                         <div className={"modalMain__body"}>
-                            <h3>Добро пожаловать! Попробуйте войти!</h3>
-
+                            <h1>Welcome! Try to login!</h1>
                             <form className="regModal" onSubmit={formik.handleSubmit}>
-
                                 <div className="row">
-                                    <h3>Почта</h3>
+                                    <h3>Email</h3>
                                     <div className="input-field col s12">
                                         <input
                                             id="email"
@@ -158,14 +159,13 @@ export const Register = () => {
                                             onChange={formik.handleChange}
                                             value={formik.values.email}
                                         />
-                                        <label htmlFor="email">Почта</label>
+                                        <label htmlFor="email">Email</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
-                                    <h3>Пароль</h3>
+                                    <h3>Password</h3>
                                     <div className="input-field col s12">
-
                                         <input
                                             id="password"
                                             type="password"
@@ -173,14 +173,13 @@ export const Register = () => {
                                             onChange={formik.handleChange}
                                             value={formik.values.password}
                                         />
-                                        <label htmlFor="password">Пароль</label>
+                                        <label htmlFor="password">Password</label>
                                     </div>
                                 </div>
 
                                 <div className="modalMain__footer">
-
-                                    <Button id="logTwo" onClick={handleMethod} data="login" className="button__footer">
-                                        <h3>Войти</h3>
+                                    <Button id="logTwo" onClick={handleMethod} data="login" className="button__modalFooter">
+                                        <h3>Login</h3>
                                     </Button>
 
                                 </div>

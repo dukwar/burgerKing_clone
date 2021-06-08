@@ -7,19 +7,20 @@ import CategoryItem from "./CategoryItem";
 
 const Category = ({name, value}) => {
 
+    console.log('CATEGORY RENDER')
+
     const {request} = useRequest()
     const dispatch = useDispatch()
 
-    const {burgers} = useSelector(({burgers}) => {
+    const burgers = useSelector(({burgers}) => {
 
         let burgersTo = ''
         if (burgers?.burgers) {
             burgersTo = burgers.burgers[value]
         }
 
-        return {
-            burgers: burgersTo
-        }
+        return burgersTo
+
     })
 
 
@@ -37,10 +38,7 @@ const Category = ({name, value}) => {
                     {burgers && burgers.map(({name, picture, price}) => {
                         return <CategoryItem name={name} picture={picture} price={price}/>
                     })}
-
                 </div>
-
-
             </div>
 
         </>

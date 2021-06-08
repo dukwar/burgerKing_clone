@@ -10,13 +10,13 @@ import {deleteBurger, getBurgersAll} from "../../Redux/actions/burgers";
 
 
 const Admin = () => {
+    console.log('RENDER ADMIN')
 
     const dispatch = useDispatch()
     const {request} = useRequest()
 
-    const [burgers] = useSelector(({burgers}) => {
-        const burgersAll = burgers?.burgersAll
-        return [burgersAll]
+    const burgers = useSelector(({burgers}) => {
+        return burgers?.burgersAll
     })
 
 
@@ -38,7 +38,7 @@ const Admin = () => {
 
     return (
         <>
-            <div className="admin container offset-s4" >
+            <div className="admin container offset-s4">
 
 
                 <Table style={{marginBottom: '50px'}} striped bordered hover>

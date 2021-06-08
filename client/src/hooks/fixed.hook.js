@@ -5,7 +5,7 @@ export const useFixed = () => {
     const [fixed, setFixed] = useState(false)
 
     const scrollHandler = () => {
-        if (document.documentElement.scrollTop > 410) {
+        if (document.documentElement.scrollTop > 400) {
             setFixed(true)
         } else {
             setFixed(false)

@@ -9,7 +9,6 @@ const Slider = () => {
         <div className="slider__container">
 
             <div className="sliderMain">
-                <div className="sliderMain__blur"></div>
                 <InfiniteCarousel
                     breakpoints={[
 
@@ -18,6 +17,7 @@ const Slider = () => {
                             settings: {
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
+
                             },
                         },
 
@@ -32,6 +32,7 @@ const Slider = () => {
                     scrollOnDevice={true}
                     swipe={true}
                     animationDuration={1000}
+
                 >
                     <div className="sliderMain__block">
                         <img
