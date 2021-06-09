@@ -9,6 +9,8 @@ html, body {
 }
 
 .wrapper {
+  display: flex!important;
+  flex-direction: column!important;
   min-height: 100vh;
   margin: 0 auto;
   background-color: $main-background!important;
@@ -31,6 +33,7 @@ html, body {
 
 
 .content {
+  flex-grow: 1!important;
   width: 100%;
   position: relative;
   background-color: $main-background;

@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {authAction} from "./Redux/actions/auth";
 import Preloader from "./Components/componentHelpers/Preloader/Preloader";
 import Footer from "./Components/Footer";
+import Message from "./Components/componentHelpers/Message";
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
                 {routes}
             </div>
             {isAuth &&  <Footer />}
+           <Message />
 
 
         </div>

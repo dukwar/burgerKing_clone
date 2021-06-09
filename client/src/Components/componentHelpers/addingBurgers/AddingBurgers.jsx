@@ -10,6 +10,7 @@ import {CSSTransition, SwitchTransition} from "react-transition-group";
 
 
 export const AddBurger = () => {
+    console.log('RENDER ADDBURGER')
 
     const {request} = useRequest()
     const dispatch = useDispatch()
@@ -18,10 +19,8 @@ export const AddBurger = () => {
         dispatch(openAction())
     }
 
-    const {categories} = useSelector(({burgers}) => {
-        return {
-            categories: burgers?.categories
-        }
+    const categories = useSelector(({burgers}) => {
+        return burgers?.categories
     })
 
     const [activeBut, setActiveBut] = useState(true)
@@ -50,7 +49,7 @@ export const AddBurger = () => {
     const formikCat = useFormik({
         initialValues: {
             name: '',
-            value: '',
+            value: categories.length + 1,
 
 
         },
@@ -103,8 +102,6 @@ export const AddBurger = () => {
                 >
                     {toggle
                         ?  <div className="modalMain__body">
-
-
                             <form className="regModal" onSubmit={formik.handleSubmit}>
 
                                 <div className="row">
@@ -117,7 +114,6 @@ export const AddBurger = () => {
                                             className="regModal__input"
                                             onChange={formik.handleChange}
                                             value={formik.values.name}
-
                                         />
                                         <label htmlFor="name">Наименование</label>
                                     </div>
@@ -186,7 +182,8 @@ export const AddBurger = () => {
                         <div className="modalMain__body">
                             <form className="regModal" onSubmit={formikCat.handleSubmit}>
                                 <div className="row">
-                                    <h3>Название категории</h3>
+                                    <h3>Name of category
+                                    </h3>
                                     <div className="input-field col s12">
                                         <input
                                             id="name"
@@ -202,7 +199,7 @@ export const AddBurger = () => {
                                 </div>
 
                                 <div className="row">
-                                    <h3>Значение</h3>
+                                    <h3>Category number</h3>
                                     <div className="input-field col s12">
                                         <input
                                             id="value"
@@ -210,16 +207,17 @@ export const AddBurger = () => {
                                             type="number"
                                             className="regModal__input"
                                             onChange={formikCat.handleChange}
-                                            value={formikCat.values.value}
+                                            value={categories.length + 1}
                                         />
-                                        <label htmlFor="price">Значение</label>
+                                        <label htmlFor="value">Номер категории
+                                        </label>
                                     </div>
                                 </div>
 
                                 <div className="modalMain__footer">
 
                                     <Button className="button__modalFooter">
-                                        <h3>Добавить категорию</h3>
+                                        <h3>Add category</h3>
                                     </Button>
                                 </div>
 

@@ -83,7 +83,7 @@ router.post('/login', [
             {expiresIn: '1h'}
         )
 
-        res.json({token, userId: user.id})
+        res.json({message: 'Вы успешно выполнили вход!', token, userId: user.id})
 
 
 

@@ -6,7 +6,7 @@ import {Button} from "../index";
 import {openAction} from "../../Redux/actions/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {AddBurger} from "../componentHelpers/addingBurgers/AddingBurgers";
-import {deleteBurger, getBurgersAll} from "../../Redux/actions/burgers";
+import {deleteBurger, getBurgersAll, getCategories} from "../../Redux/actions/burgers";
 
 
 const Admin = () => {
@@ -28,6 +28,7 @@ const Admin = () => {
     }, [request, dispatch])
 
     useEffect(() => {
+        dispatch(getCategories(request))
         dispatch(getBurgersAll(request))
     }, [dispatch, request])
 

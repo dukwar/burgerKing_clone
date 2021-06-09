@@ -7,19 +7,15 @@ import {useFormik} from "formik";
 import {authThunk, openAction} from "../../../Redux/actions/auth";
 import {Cancel} from "../Sprites";
 import {useAuth} from "../../../hooks/auth.hook";
-import {useMessage} from "../../../hooks/message.hook";
-
 
 export const Register = () => {
 
-    const messageF = useMessage()
-    const {request, message} = useRequest()
+    const {request} = useRequest()
     const dispatch = useDispatch()
     const profile = useSelector(({auth}) => {
-        return {
-            profile: auth.profile
-        }
+        return auth.profile
     })
+
     const {login} = useAuth()
     const [activeBut, setActiveBut] = useState(true)
     const [toggle, setToggle] = useState(true)

@@ -7,18 +7,16 @@ import CategoryItem from "./CategoryItem";
 
 const Category = ({name, value}) => {
 
-    console.log('CATEGORY RENDER')
+    // console.log('CATEGORY RENDER')
 
     const {request} = useRequest()
     const dispatch = useDispatch()
 
     const burgers = useSelector(({burgers}) => {
-
         let burgersTo = ''
         if (burgers?.burgers) {
             burgersTo = burgers.burgers[value]
         }
-
         return burgersTo
 
     })

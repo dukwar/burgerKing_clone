@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import {Link} from "react-router-dom";
 
 
 const Dropdown = ({isOpen}) => {
@@ -17,25 +18,31 @@ const Dropdown = ({isOpen}) => {
                 <div className="menu">
                     <div className="menu__sideA">
                         <ul>
-                            <li>
-                                <h3>Меню</h3>
-                            </li>
-
-                            <li>
-                                <h3>Купоны</h3>
-                            </li>
-
-                            <li>
-                                <h3>King Club</h3>
-                            </li>
-
-                            <li>
-                                <h3>Обратная связь</h3>
-                            </li>
-
-                            <li>
-                                <h3>Работа</h3>
-                            </li>
+                            <Link to="/home">
+                                <li>
+                                    <h3>Menu</h3>
+                                </li>
+                            </Link>
+                            <Link to="/admin">
+                                <li>
+                                    <h3>Add position</h3>
+                                </li>
+                            </Link>
+                            <Link>
+                                <li>
+                                    <h3>King Club</h3>
+                                </li>
+                            </Link>
+                            <Link>
+                                <li>
+                                    <h3>Contacts</h3>
+                                </li>
+                            </Link>
+                            <Link to="/work">
+                                <li>
+                                    <h3>Work</h3>
+                                </li>
+                            </Link>
                         </ul>
                     </div>
                     <div className="menu__sideB">

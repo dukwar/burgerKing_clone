@@ -5,10 +5,9 @@ import {useSelector} from "react-redux";
 
 const Modal = ({children}) => {
 
-    const {isOpenDrop} = useSelector(({auth}) => {
-        return {
-            isOpenDrop: auth.isOpen
-        }
+    const isOpenDrop = useSelector(({auth}) => {
+        return auth.isOpen
+
     })
 
     if (isOpenDrop) {

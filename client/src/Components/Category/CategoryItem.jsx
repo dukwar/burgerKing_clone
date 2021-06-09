@@ -3,7 +3,7 @@ import {Button} from "../index";
 
 
 const CategoryItem = React.memo(({name, picture, price}) => {
-    console.log('CATITEM RENDER')
+    // console.log('CATITEM RENDER')
 
     return (
         <>

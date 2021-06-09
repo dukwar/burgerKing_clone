@@ -1,10 +1,13 @@
 import {useCallback, useState} from "react";
+import {useDispatch} from "react-redux";
+import {setMessage} from "../Redux/actions/message";
 
 
 export const useRequest = () => {
 
 
-    const [message, setMessage] = useState('')
+    // const [message, setMessage] = useState('')
+    const dispatch = useDispatch()
     const [loading, setLoading] = useState(false)
     const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
 
@@ -20,7 +23,10 @@ export const useRequest = () => {
             const data = await res.json()
 
             console.log(data)
-            setMessage(data.message)
+            if (!data.burgers && !data.categories) {
+                dispatch(setMessage(data.message, true))
+            }
+
 
             if (!res.ok) {
                 throw new Error(data.message || 'Запрос не прошел')
@@ -31,7 +37,9 @@ export const useRequest = () => {
 
 
         } catch (e) {
-            setMessage(e.message)
+            if (e.message !== 'Вот ваши бургеры!' && e.message !== 'Все категории!') {
+                dispatch(setMessage(e.message, true))
+            }
             setLoading(false)
             console.log(e.message)
 
@@ -42,5 +50,5 @@ export const useRequest = () => {
     }, [])
 
 
-    return {request, message}
+    return {request}
 }
