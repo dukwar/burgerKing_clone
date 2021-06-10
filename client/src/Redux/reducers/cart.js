@@ -1,4 +1,4 @@
-import {ADD_LOCAL_ITEM, ADD_PIZZA_CART, CLEAR_CART, REMOVE_CART_ITEM, REMOVE_LOCAL_ITEM} from "../constants";
+import {ADD_BURGER_CART, ADD_LOCAL_ITEM, CLEAR_CART, REMOVE_CART_ITEM, REMOVE_LOCAL_ITEM} from "../constants";
 
 
 const initialState = {
@@ -35,7 +35,7 @@ const cart = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case ADD_PIZZA_CART:
+        case ADD_BURGER_CART:
 
             const currentPizzaItems = !state.items[action.payload.id]
                 ? [action.payload]

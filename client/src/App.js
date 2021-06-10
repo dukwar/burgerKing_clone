@@ -13,7 +13,7 @@ import Message from "./Components/componentHelpers/Message";
 
 
 function App() {
-    console.log('APP RENDER')
+    // console.log('APP RENDER')
 
     const location = useLocation()
     const dispatch = useDispatch()

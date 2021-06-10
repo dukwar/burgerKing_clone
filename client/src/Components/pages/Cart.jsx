@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {clearCart, removeCartItem, addLocalItem, removeLocalItem} from "../../Redux/actions/cart";
 import emptyCart from '../../assets/img/empty-cart.png'
 import {Link} from "react-router-dom";
+import Button from "../Button";
 
 function Cart() {
     const dispatch = useDispatch()
@@ -30,7 +31,6 @@ function Cart() {
 
 
     const onAddLocalItem = (id) => {
-
         dispatch(addLocalItem(id))
     }
 
@@ -45,7 +45,7 @@ function Cart() {
 
 
         <div className="content">
-            <div className="container container--cart">
+            <div className="containerMain containerMain--cart">
                 {
                     totalCount ? <div className="cart">
                             <div className="cart__top">
@@ -62,7 +62,7 @@ function Cart() {
                                             d="M4.78002 4.99999H16.3334L15.2134 10.5933C15.1524 10.9003 14.9854 11.176 14.7417 11.3722C14.4979 11.5684 14.1929 11.6727 13.88 11.6667H6.83335C6.50781 11.6694 6.1925 11.553 5.94689 11.3393C5.70128 11.1256 5.54233 10.8295 5.50002 10.5067L4.48669 2.82666C4.44466 2.50615 4.28764 2.21182 4.04482 1.99844C3.80201 1.78505 3.48994 1.66715 3.16669 1.66666H1.66669"
                                             stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
-                                    Корзина
+                                   Cart
                                 </h2>
                                 <div className="cart__clear">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -88,6 +88,7 @@ function Cart() {
                                 {
                                     addedPizzas.map((obj) => <CartItem name={obj.name}
                                                                        id={obj.id}
+                                                                       picture={obj.picture}
                                                                        type={obj.type}
                                                                        size={obj.size}
                                                                        totalCount={items[obj.id].totalCount}
@@ -102,22 +103,25 @@ function Cart() {
                             </div>
                             <div className="cart__bottom">
                                 <div className="cart__bottom-details">
-                                    <span> Всего пицц: <b>{totalCount} шт.</b> </span>
+                                    <span> Всего товаров: <b>{totalCount} шт.</b> </span>
                                     <span> Сумма заказа: <b>{totalPrice} ₽</b> </span>
                                 </div>
                                 <div className="cart__bottom-buttons">
-                                    <Link to="/" className="button button--outline button--add go-back-btn">
-                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5"
-                                                  strokeLinecap="round" strokeLinejoin="round"/>
-                                        </svg>
+                                    <Button className="button button--goBack">
+                                        <Link to="/">
+                                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5"
+                                                      strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
 
-                                        <span>Вернуться назад</span>
-                                    </Link>
-                                    <div className="button pay-btn">
+                                            <span>Вернуться назад</span>
+                                        </Link>
+                                    </Button>
+
+                                    <Button className="button button--pay">
                                         <span>Оплатить сейчас</span>
-                                    </div>
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +133,8 @@ function Cart() {
                                 Для того, чтобы заказать пиццу, перейди на главную страницу.
                             </p>
                             <img src={emptyCart} alt="Empty cart"/>
-                            <Link to="/" className="button button--black">
+
+                            <Link to="/" className="button button--goBack">
                                 <span>Вернуться назад</span>
                             </Link>
                         </div>

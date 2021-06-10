@@ -18,19 +18,20 @@
     background-color: orange;
   }
 
+
   &--exit {
     background-color: transparent;
 
     p {
-      transition: all .1s linear!important;
+      transition: all .1s linear !important;
 
       &:hover {
-        color: darken(lawngreen, 12%)!important;
+        color: darken(lawngreen, 12%) !important;
       }
     }
 
     &:hover {
-      background: none!important;
+      background: none !important;
     }
 
   }
@@ -39,7 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:transparent;
+    background-color: transparent;
     border: 2px solid orange;
     border-radius: 4px;
     color: orange;
@@ -47,23 +48,33 @@
     height: 40px;
     padding: 5px 8px;
     margin-top: 15px;
+    transition: all .1s ease-in-out;
 
     &:focus {
       background-color: transparent;
     }
 
     &:hover {
-      background: none!important;
+      border: 2px solid darken(lawngreen, 12%) !important;
+      background-color: transparent !important;
+    }
+
+    &:hover p {
+      color: darken(lawngreen, 12%) !important;
+      background-color: transparent !important;
+
     }
 
     .price {
+      display: flex;
 
       &__number {
+        display: flex;
         color: orange;
         font-size: 23px;
         font-weight: 500;
 
-        span {
+        p {
           color: orange;
           font-size: 0.68em;
           line-height: 1;
@@ -104,11 +115,11 @@
     width: 100%;
     height: 100%;
     font-weight: 500;
-    color: black!important;
+    color: black !important;
 
     &:hover {
-      background-color: transparent!important;
-      color: darken(lawngreen, 15%)!important;
+      background-color: transparent !important;
+      color: darken(lawngreen, 15%) !important;
     }
   }
 
@@ -122,22 +133,21 @@
     margin-top: 20px;
 
 
-
     h3 {
       font-weight: 500;
       font-size: 20px;
 
-      color: $white!important;
+      color: $white !important;
     }
   }
 
   &__active {
-    background-color: darken(lawngreen, 15%)!important;
-    color: #f3f3f3!important;
+    background-color: darken(lawngreen, 15%) !important;
+    color: #f3f3f3 !important;
 
     &:hover {
-      background-color: darken(lawngreen, 15%)!important;
-      color: #f3f3f3!important;
+      background-color: darken(lawngreen, 15%) !important;
+      color: #f3f3f3 !important;
     }
   }
 
@@ -183,43 +193,6 @@
     border-width: 2px;
   }
 
-  &--black {
-    background-color: $black;
-
-    &:hover,
-    &:active {
-      background-color: lighten($color: $black, $amount: 10);
-    }
-  }
-
-  &--outline {
-    background-color: #fff;
-    border-color: $cart-button;
-    &,
-    span {
-      color: $cart-button;
-    }
-
-    svg {
-      path {
-        fill: $cart-button;
-      }
-    }
-
-    &:hover {
-      background-color: $cart-button;
-
-      &,
-      span {
-        color: #fff;
-      }
-    }
-
-    &:active {
-      background-color: darken($cart-button, 8%);
-    }
-  }
-
   &__delimiter {
     width: 1px;
     height: 25px;
@@ -228,44 +201,11 @@
     margin-right: 14px;
   }
 
-  &--add {
-    svg {
-      margin-right: 2px;
-    }
-
-    span {
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    &:hover {
-      i {
-        background-color: #fff;
-        color: $orange;
-      }
-    }
-
-    i {
-      display: inline-block;
-      border-radius: 30px;
-      background-color: $orange;
-      color: #fff;
-      font-weight: 600;
-      width: 22px;
-      height: 22px;
-      font-style: normal;
-      font-size: 13px;
-      line-height: 22px;
-      position: relative;
-      top: -1px;
-      left: 3px;
-    }
-  }
 
   &--cart {
     display: flex;
     transition: all .1s linear;
-    width: 130px;
+    min-width: 150px;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
@@ -282,12 +222,54 @@
       font-size: 16px;
     }
   }
+
+  &--goBack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    border: 2px solid gray;
+    background-color: transparent;
+
+    span {
+      color: gray !important;
+      margin-left: 10px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      background-color: #181818 !important;
+
+      span {
+        color: $white !important;
+      }
+    }
+  }
+
+  &--addLocal {
+    min-width: 50px;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  &--removeLocal {
+    border-radius: 15px;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #181818;
+  }
+
 }
 
 @media (max-width: 654px) {
 
   .button {
-    padding: 10px 15px!important;
+    padding: 10px 15px !important;
     min-width: 60px;
     min-height: 35px;
 
@@ -296,12 +278,68 @@
       width: 100%;
       height: 100%;
       font-weight: 500;
-      color: black!important;
+      color: black !important;
 
       p {
         font-size: 14px;
       }
     }
+
+    &--item {
+      width: 120px;
+      height: 35px;
+
+      &:focus {
+        background-color: transparent;
+      }
+
+      &:hover {
+        border: 2px solid darken(lawngreen, 12%) !important;
+        color: darken(lawngreen, 12%) !important;
+        font-size: 50px;
+
+      }
+
+      .price {
+
+        &__number {
+          color: orange;
+          font-size: 18px;
+          font-weight: 500;
+
+          span {
+            color: orange;
+            font-size: 15px;
+            line-height: 1;
+            vertical-align: top;
+          }
+
+        }
+
+        &__nom {
+          color: orange;
+          font-size: 18px;
+          font-weight: 500;
+          margin-left: 5px;
+        }
+
+        &__plus {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+
+          p {
+            color: orange;
+            font-size: 28px;
+            font-weight: 500;
+            padding-bottom: 5px;
+
+          }
+        }
+      }
+    }
+
 
     &--exit {
       background-color: orange;
@@ -309,14 +347,14 @@
       border-radius: 5px;
 
       &:hover {
-        background-color: orange!important;
+        background-color: orange !important;
       }
 
       p {
         color: white;
 
         &:hover {
-          color: white!important;
+          color: white !important;
         }
       }
 
@@ -328,8 +366,51 @@
       h3 {
         font-weight: 500;
         font-size: 20px;
-        color: $white!important;
+        color: $white !important;
       }
+    }
+
+    &--goBack {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      border: 2px solid gray;
+      background-color: transparent;
+
+      span {
+        color: gray !important;
+        margin-left: 10px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover {
+        background-color: #181818 !important;
+
+        span {
+          color: $white !important;
+        }
+      }
+    }
+
+    &--addLocal {
+      min-width: 50px;
+      min-height: 50px;
+      padding: 0px !important;
+      border-radius: 15px;
+    }
+
+    &--removeLocal {
+      margin-top: 20px;
+      border-radius: 15px;
+      min-width: 80px;
+      min-height: 60px;
+      background-color: #181818;
     }
   }
 }

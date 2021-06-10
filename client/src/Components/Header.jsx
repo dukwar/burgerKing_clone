@@ -11,7 +11,7 @@ import {authAction} from "../Redux/actions/auth";
 
 
 const Header = (props) => {
-    console.log('HEADER RENDER')
+    // console.log('HEADER RENDER')
 
     const {fixed} = useFixed()
     const history = useHistory()

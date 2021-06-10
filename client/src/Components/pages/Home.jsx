@@ -10,7 +10,7 @@ import Preloader from "../componentHelpers/Preloader/Preloader";
 
 function Home() {
 
-    console.log('HOME RENDER')
+    // console.log('HOME RENDER')
     const [activeLi, setActiveLi] = useState(0)
     const {fixed} = useFixed()
 

@@ -1,9 +1,15 @@
-import {ADD_LOCAL_ITEM, ADD_PIZZA_CART, CLEAR_CART, REMOVE_CART_ITEM, REMOVE_LOCAL_ITEM} from "../constants";
+import {
+    ADD_BURGER_CART,
+    ADD_LOCAL_ITEM,
+    CLEAR_CART,
+    REMOVE_CART_ITEM,
+    REMOVE_LOCAL_ITEM
+} from "../constants";
 
-export const addPizzaToCart = (pizzaObj) => {
+export const addBurgerToCart = (burgerObj) => {
     return {
-        type: ADD_PIZZA_CART,
-        payload: pizzaObj
+        type: ADD_BURGER_CART,
+        payload: burgerObj
     }
 }
 
