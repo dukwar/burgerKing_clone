@@ -7,11 +7,7 @@ router.post('/generate', async (req, res) => {
 
     try {
 
-
-       console.log('Data', req.body)
         const {picture, name, price, category} = req.body
-
-
         const existing = await Burger.findOne({name})
 
         if (existing) {
@@ -28,7 +24,6 @@ router.post('/generate', async (req, res) => {
         })
 
         await burger.save()
-
         res.status(201).json({message:'Бургер создан', burger})
 
 
@@ -42,23 +37,15 @@ router.post('/delete', async (req, res) => {
 
     try {
 
-
-        console.log('Data', req.body)
         const {name} = req.body
-
-
         const burger = await Burger.findOne({name})
 
         if (!burger) {
             res.json({message: 'Такой бургер не найден в базе!'})
         }
 
-
-
         await burger.delete()
-
         res.status(201).json({message:'Бургер удален', burger})
-
 
     } catch (e) {
         res.status(401).json('Что-то пошло не так')
@@ -70,8 +57,6 @@ router.post('/delete', async (req, res) => {
 router.get('/all', async (req, res) => {
 
     try {
-
-        console.log('Data', req.body)
 
         const burgers = await Burger.find()
 
@@ -92,21 +77,11 @@ router.get('/:category', async (req, res) => {
     try {
 
         const category = req.params.category
-
-
-        console.log('Data', req.body)
-
-
-
         const burgers = await Burger.find({category: category})
 
        if (burgers) {
            res.json({message: 'Вот ваши бургеры!', burgers})
        }
-
-
-
-
 
     } catch (e) {
         res.status(401).json('Что-то пошло не так')
