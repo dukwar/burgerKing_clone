@@ -112,11 +112,11 @@
 
 /* animation */
 .fade-enter-active {
-  animation: slideUp 500ms forwards;
+  animation: slideUp 600ms forwards;
 }
 
 .fade-exit-active {
-  animation: slideDown 500ms forwards;
+  animation: slideDown 600ms forwards;
 }
 
 
@@ -148,12 +148,12 @@
   }
 
   100% {
-    transform: translateX(700px);
+    transform: translateX(1000px);
   }
 
 }
 
-@media (max-width: 624px) {
+@media (max-width: 884px) {
 
   .modalMain__window {
     display: flex;
@@ -164,8 +164,33 @@
     border-radius: 15px;
     background-color: #fdfdfd;
     padding: 30px;
-    overflow: scroll;
+    overflow-y: scroll;
     animation: modal__windowOpen .3s ease forwards;
+  }
+
+  .modalMain__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    &__cancel {
+      width: 30px!important;
+      height: 30px!important;
+      padding: 4px;
+      margin-left: auto;
+      cursor: pointer;
+      transition: all .1s linear;
+
+      &:hover {
+        fill: darken(lawngreen, 15%);
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+
+    }
   }
 
   .modalMain__body {
@@ -190,3 +215,33 @@
 
 
 }
+
+@media (max-height: 884px) {
+
+  .modalMain__window {
+    overflow-y: scroll;
+  }
+
+  .modalMain__body {
+
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h3 {
+      width: 350px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  .modalMain__footer {
+    .accept {
+      width: 100%;
+    }
+  }
+}
+
+
+

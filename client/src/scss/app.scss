@@ -333,7 +333,7 @@ html, body {
 
         &:last-of-type {
           b {
-            color: $orange;
+            color: $cart-button;
           }
         }
       }
@@ -377,7 +377,7 @@ html, body {
     width: 100%;
     background-color: transparent;
     box-shadow: none;
-    transition: all .1s linear;
+
 
     &.fixedBlock {
       position: fixed;
@@ -392,6 +392,7 @@ html, body {
       width: 100%;
       height: 70px;
       padding: 0 30px;
+
 
       ul {
         display: flex;

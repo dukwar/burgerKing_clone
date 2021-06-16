@@ -5,6 +5,8 @@ import CategoryItem from "./CategoryItem";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {burgerType, categoryType} from "../../Redux/reducers/types";
 import {useBurgersActions} from "../../hooks/useActions";
+import {fetchApiUsers} from "../../Redux/actions/user";
+import {useDispatch} from "react-redux";
 
 
 const Category = ({name, value}: categoryType) => {
@@ -21,6 +23,7 @@ const Category = ({name, value}: categoryType) => {
     })
 
     useEffect(() => {
+
         getBurgers(request, value)
     }, [request, value])
 

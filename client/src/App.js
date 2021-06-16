@@ -6,7 +6,7 @@ import {useRoutes} from "./hooks/routes.hook";
 import Slider from "./Components/Carousel/Carousel";
 import {useAuth} from "./hooks/auth.hook";
 import {useDispatch, useSelector} from "react-redux";
-import {authAction} from "./Redux/actions/auth";
+import {authAction, checkAuth} from "./Redux/actions/auth";
 import Preloader from "./Components/componentHelpers/Preloader/Preloader";
 import Footer from "./Components/Footer";
 import Message from "./Components/componentHelpers/Message";
@@ -17,20 +17,16 @@ function App() {
 
     const location = useLocation()
     const dispatch = useDispatch()
-    const profile = useSelector(({auth}) => {
-        return auth.profile
-    })
+    const {profile, isAuth} = useSelector(({auth}) => auth)
     const [ready, setReady] = useState(false)
     const {login, logout, storageName} = useAuth()
-    const isAuth = !!profile?.token
+    // const isAuth = !!profile?.token
     const routes = useRoutes(isAuth)
 
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem(storageName))
-
-        if (data && data.token) {
-            dispatch(authAction(data))
-        }
+       if (localStorage.getItem('userData')) {
+          dispatch(checkAuth())
+       }
 
         setTimeout(() => {
             setReady(true)

@@ -46,12 +46,12 @@ export const Register = () => {
         initialValues: {
             email: '',
             password: '',
-            toggle: ''
+
         },
         onSubmit: (values) => {
             openAction()
             alert(JSON.stringify(values, null, 2));
-            authThunk(request, method, values, login)
+            authThunk(request, method, values)
         }
     })
 
@@ -132,7 +132,7 @@ export const Register = () => {
                                                 id="toggle"
                                                 type="checkbox"
                                                 onChange={formik.handleChange}
-                                                value={formik.values.toggle}
+                                                // value={formik.values.toggle}
                                             />
                                             <span>Я принимаю условия пользовательского
                                     соглашения и программы лояльности</span>

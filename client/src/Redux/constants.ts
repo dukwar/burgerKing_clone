@@ -11,6 +11,8 @@ export const SET_BURGERS = 'SET_BURGERS'
 export const SET_CATEGORIES = 'SET_CATEGORIES'
 export const SET_OPEN_VACANCY = 'SET_OPEN_VACANCY'
 export const SET_MESSAGE = 'SET_MESSAGE'
+export const FETCH_USERS = 'FETCH_USERS'
+
 
 
 

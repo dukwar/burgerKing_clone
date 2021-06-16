@@ -5,6 +5,7 @@ import {profileType} from "./types";
 
 const initialState = {
     profile: null as profileType | null,
+    isAuth: false,
     isOpen: false,
     userData: null,
 }
@@ -19,7 +20,8 @@ const auth = (state = initialState, action:AuthActionTypes):initialStateType => 
 
         return {
             ...state,
-            profile: action.payload
+            profile: action.profile,
+            isAuth: action.isAuth
         }
 
         case OPEN_ACTION:

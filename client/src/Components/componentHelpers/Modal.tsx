@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Portal from "./Portal";
 import {useSelector} from "react-redux";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
@@ -9,6 +9,7 @@ interface ModalType {
 
 const Modal = ({children}:ModalType) => {
 
+
     const isOpenDrop = useTypesSelector(({auth}) => auth.isOpen)
 
     if (isOpenDrop) {
@@ -16,6 +17,8 @@ const Modal = ({children}:ModalType) => {
     } else {
         document.body.style.overflow = ''
     }
+
+
 
     return (
         <>

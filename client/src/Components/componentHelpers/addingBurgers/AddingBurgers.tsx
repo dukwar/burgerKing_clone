@@ -34,6 +34,9 @@ export const AddBurger = () => {
         setActiveBut(!activeBut)
     }
 
+    const handleInitPlugin = () => {
+
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -68,14 +71,17 @@ export const AddBurger = () => {
             const elems = document.querySelectorAll("select");
             window.M.FormSelect.init(elems);
             window.M.updateTextFields()
-
-        }, 600)
+        }, 605)
 
     }, [toggle, activeBut])
 
 
     return (
+
+
+
         <>
+
 
             <div className="modalMain__header">
                 <div className="modalMain__group">
@@ -97,7 +103,7 @@ export const AddBurger = () => {
             <SwitchTransition mode={'out-in'}>
                 <CSSTransition
                     key={toggle as any}
-                    timeout={500}
+                    timeout={600}
                     classNames="fade"
                 >
                     {toggle
@@ -135,19 +141,21 @@ export const AddBurger = () => {
                                 </div>
 
 
-                                <div className="row">
-                                    <div className="input-field col s12">
+                                <div className="select row">
+                                    <div className="input__select input-field col s12">
                                         <select
                                             id="category"
                                             name="category"
                                             onChange={formik.handleChange}
                                             value={formik.values.category}
-                                            className="input__select">
-                                            <option className="input__item" value="" disabled selected>Выберите
-                                                категорию
+                                          >
+                                            <option className="input__item" value="" disabled selected>
+                                               Выберите категорию
                                             </option>
                                             {categories && categories.map(({name, value}) => {
-                                                return <option className="input__item" value={value}>{name}</option>
+                                                return <option className="input__item" value={value}>
+                                                  {name}
+                                                    </option>
                                             })}
 
                                         </select>

@@ -1,7 +1,8 @@
 // for auth
 export type profileType = {
-    token: string,
+    accessToken: string,
     userId: string
+    email: string
 }
 
 // for message

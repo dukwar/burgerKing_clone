@@ -7,7 +7,7 @@ const Slider = () => {
 
 
     return (
-        <div className="slider__container">
+        <div id="sliderId2" className="slider__container">
 
             <div className="sliderMain">
                 <InfiniteCarousel

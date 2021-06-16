@@ -43,8 +43,8 @@ const navItems:navType[] = [
 
     {
         id: 7,
-        title: 'Найти рестораны',
-        to: '/search'
+        title: 'Все пользователи',
+        to: '/users'
     },
 ]
 

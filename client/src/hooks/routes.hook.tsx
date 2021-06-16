@@ -5,6 +5,7 @@ import Cart from "../Components/pages/Cart";
 import Auth from "../Components/pages/Auth";
 import Admin from "../Components/pages/Admin";
 import Work from "../Components/pages/Work";
+import Users from "../Components/pages/Users";
 
 
 export const useRoutes = (isAuthenticated:boolean) => {
@@ -23,6 +24,9 @@ export const useRoutes = (isAuthenticated:boolean) => {
                 </Route>
                 <Route exact path="/work">
                     <Work />
+                </Route>
+                <Route exact path="/users">
+                    <Users />
                 </Route>
                 <Redirect to='/home'/>
             </Switch>

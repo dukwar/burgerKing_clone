@@ -72,7 +72,7 @@ const Admin = () => {
                     })}
                     </tbody>
                 </Table>
-                <Button onClick={handleActiveOpen}><h3>Add burger</h3></Button>
+                <Button className={"button__modalFooter"} onClick={handleActiveOpen}><h3>Add burger</h3></Button>
             </div>
 
             <Modal>

@@ -5,6 +5,8 @@ import * as workActionCreators from "../Redux/actions/work"
 import * as burgersActionCreators from "../Redux/actions/burgers"
 import * as cartActionCreators from "../Redux/actions/cart"
 import * as messageActionCreators from "../Redux/actions/message"
+import * as usersActionCreators from "../Redux/actions/user"
+
 
 
 
@@ -34,6 +36,11 @@ export const useCartActions = () => {
 export const useMessageActions = () => {
     const dispatch = useDispatch()
     return bindActionCreators(messageActionCreators, dispatch)
+}
+
+export const useUsersActions = () => {
+    const dispatch = useDispatch()
+    return bindActionCreators(usersActionCreators, dispatch)
 }
 
 

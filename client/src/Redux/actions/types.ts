@@ -1,7 +1,7 @@
 import {
     ADD_BURGER_CART, ADD_LOCAL_ITEM,
     AUTH_ACTION,
-    CLEAR_CART,
+    CLEAR_CART, FETCH_USERS,
     OPEN_ACTION,
     REMOVE_CART_ITEM, REMOVE_LOCAL_ITEM, SET_BURGERS, SET_BURGERS_ALL, SET_CATEGORIES, SET_LOADED,
     SET_MESSAGE,
@@ -10,12 +10,26 @@ import {
 import {burgerApiType, burgersTypes, burgerType, categoryType, messageInnerType, profileType} from "../reducers/types";
 import {authAction} from "./auth";
 import {Dispatch} from "redux";
-import {setMessage} from "./message";
+
+
+// usersType
+
+export interface fetchUsersType {
+    type: typeof FETCH_USERS,
+    payload: IUser[]
+}
+
+export interface IUser {
+    email: string,
+    isActivated: boolean,
+    _id: string
+}
 
 // authType
 export interface authActionType {
     type: typeof AUTH_ACTION,
-    payload: profileType | null
+    profile: profileType,
+    isAuth: boolean
 }
 
 export interface openActionType {

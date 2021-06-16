@@ -1,4 +1,3 @@
-import {requestType} from "./request.hook"
 
 
 export type useRequestType = {

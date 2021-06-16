@@ -8,6 +8,7 @@ import Dropdown from "./componentHelpers/Dropdown";
 import {useFixed} from "../hooks/fixed.hook";
 import {useTypesSelector} from "../hooks/useTypesSelector";
 import {useAuthActions} from "../hooks/useActions";
+import {useRequest} from "../hooks/request.hook";
 
 interface HeaderProps
     extends React.HTMLAttributes<HTMLDivElement> {
@@ -19,7 +20,8 @@ const Header = ({logout}:HeaderProps) => {
 
     const {fixed} = useFixed()
     const history = useHistory()
-    const {authAction} = useAuthActions()
+    const {request} = useRequest()
+    const {authAction, authThunk} = useAuthActions()
 
     const {totalPrice, totalCount} = useTypesSelector(({cart}) => cart)
     const [isOpen, setOpen] = useState<boolean>(false)
@@ -59,7 +61,7 @@ const Header = ({logout}:HeaderProps) => {
 
 
     const handleLogout = () => {
-        authAction(null)
+        authThunk(request, 'logout', null)
         logout()
         history.push('/')
     }

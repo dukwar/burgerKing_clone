@@ -1,6 +1,12 @@
 {
   "port": 5000,
+  "smtpHost": "smtp.gmail.com",
+  "smtpPort": 587,
+  "smtpUser": "d.clopop@gmail.com",
+  "smtpPassword": "123654321qwd",
   "jwtSecret": "dukwar",
+  "jwtRefreshSecret": "dukwarRefresh",
   "mongoUri": "mongodb+srv://dukwar228:123654321@burgercluster.topvd.mongodb.net/app?retryWrites=true&w=majority",
-  "baseUrl": "http://localhost:5000"
+  "baseUrl": "http://localhost:5000",
+  "clientUrl": "http://localhost:3000"
 }

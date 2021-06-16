@@ -59,7 +59,7 @@ function Home() {
         <>
             <div className={classes}>
                 <div className="containerMain">
-                    <div className="content__top__menu">
+                    <div id="contentMenu" className="content__top__menu">
                         <ul id="scrollUl">
                             {categories && categories.map(({name}, index) => {
                                 return <li className={activeLi === index ? "activeLi" : ""}
