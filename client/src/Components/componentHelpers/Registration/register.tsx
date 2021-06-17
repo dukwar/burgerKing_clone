@@ -3,20 +3,14 @@ import Button from "../../Button";
 import React, {useEffect, useState} from "react";
 import {useRequest} from "../../../hooks/request.hook";
 import {useFormik} from "formik";
-import {authThunk, openAction} from "../../../Redux/actions/auth";
 import {Cancel} from "../Sprites";
-import {useAuth} from "../../../hooks/auth.hook";
-import {useTypesSelector} from "../../../hooks/useTypesSelector";
 import {useAuthActions} from "../../../hooks/useActions";
 
 export const Register = () => {
 
     const {request} = useRequest()
-    const profile = useTypesSelector(({auth}) => {
-        return auth.profile
-    })
 
-    const {login} = useAuth()
+
     const {authThunk, openAction} = useAuthActions()
     const [activeBut, setActiveBut] = useState<boolean>(true)
     const [toggle, setToggle] = useState<boolean>(true)
@@ -60,7 +54,7 @@ export const Register = () => {
             if (formik.values.email !== '' || formik.values.password !== '') {
                 window.M.updateTextFields()
             }
-        }, 600)
+        }, 610)
     }, [toggle, activeBut, formik.values.email, formik.values.password])
 
     return (
@@ -86,7 +80,7 @@ export const Register = () => {
             <SwitchTransition mode={'out-in'}>
                 <CSSTransition
                     key={toggle as any}
-                    timeout={500}
+                    timeout={600}
                     classNames="fade"
                 >
                     {toggle ?

@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../Button";
 import Modal from "../componentHelpers/Modal";
 import {Register} from "../componentHelpers/Registration/register";
-import {openAction} from "../../Redux/actions/auth";
 import {useAuthActions} from "../../hooks/useActions";
 
 
@@ -19,7 +18,7 @@ const Auth = () => {
                 <div className="auth__background">
                 </div>
                 <div className="auth__form">
-                    <div className="auth__darken"></div>
+                    <div className="auth__darken"/>
 
                     <div className="auth__form__group">
                         <div className="auth__text">

@@ -25,7 +25,7 @@ class UserService {
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
 
-        return {...tokens, userDto}
+        return {...tokens, userDto,  message: 'Вы успешно зарегистрировались!'}
     }
 
     async activate(activationLink) {
@@ -52,7 +52,7 @@ class UserService {
         const userDto = new UserDto(user)
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
-        return {...tokens, userDto}
+        return {...tokens, userDto, message: 'Вы успешно вошли!'}
 
     }
 
@@ -76,12 +76,12 @@ class UserService {
         const userDto = new UserDto(user)
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
-        return {...tokens, userDto}
+        return {...tokens, userDto, message: 'Был выполнен выход!!'}
     }
 
     async getAllUsers() {
         const users = await User.find()
-        return users
+        return {users, message: 'Все пользователи!'}
     }
 }
 

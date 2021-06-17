@@ -1,10 +1,10 @@
 import {FETCH_USERS} from "../constants";
-import {fetchUsersType, IUser} from "../actions/types";
+import {fetchUsersType, IUserApi} from "../actions/types";
 
 
 
 const initialState = {
-   users: [] as IUser[]
+   users: {} as IUserApi
 }
 
 

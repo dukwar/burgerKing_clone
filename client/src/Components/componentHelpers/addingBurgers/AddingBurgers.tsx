@@ -1,25 +1,21 @@
 import Button from "../../Button";
 import React, {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
 import {useRequest} from "../../../hooks/request.hook";
 import {useFormik} from "formik";
-import {openAction} from "../../../Redux/actions/auth";
 import {Cancel} from "../Sprites";
-import {addBurger, addCategory} from "../../../Redux/actions/burgers";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import {useTypesSelector} from "../../../hooks/useTypesSelector";
-import {useAuthActions} from "../../../hooks/useActions";
+import {useAuthActions, useBurgersActions} from "../../../hooks/useActions";
 
 
 export const AddBurger = () => {
-    console.log('RENDER ADDBURGER')
 
     const {request} = useRequest()
-    const {} = useAuthActions()
-    const dispatch = useDispatch()
+    const {openAction} = useAuthActions()
+    const {addBurger, addCategory} = useBurgersActions()
 
     const handleActiveOpen = () => {
-        dispatch(openAction())
+       openAction()
     }
 
     const categories = useTypesSelector(({burgers}) => {
@@ -34,10 +30,6 @@ export const AddBurger = () => {
         setActiveBut(!activeBut)
     }
 
-    const handleInitPlugin = () => {
-
-    }
-
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -48,7 +40,7 @@ export const AddBurger = () => {
         },
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
-            dispatch(addBurger(request, values))
+           addBurger(request, values)
         }
     })
 
@@ -61,7 +53,7 @@ export const AddBurger = () => {
         },
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
-            dispatch(addCategory(request, values))
+          addCategory(request, values)
         }
     })
 

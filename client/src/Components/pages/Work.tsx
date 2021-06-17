@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button} from "../index";
 import WSpoiler from "../WorkSpoiler/WSpoiler";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
+import Button from "../Button";
 
 
 
@@ -45,13 +45,10 @@ function Work() {
                                 markerTextOne={markerTextOne}
                                 markerTextTwo={markerTextTwo}
                                 isOpen={isOpen}
-
                             />
                         })}
                     </div>
                 </div>
-
-
             </section>
         </>
 

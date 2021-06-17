@@ -16,7 +16,12 @@ import {Dispatch} from "redux";
 
 export interface fetchUsersType {
     type: typeof FETCH_USERS,
-    payload: IUser[]
+    payload: IUserApi
+}
+
+export interface IUserApi {
+    users: IUser[],
+    message: string
 }
 
 export interface IUser {

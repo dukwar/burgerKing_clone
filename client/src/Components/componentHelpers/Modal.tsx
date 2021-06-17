@@ -1,6 +1,5 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Portal from "./Portal";
-import {useSelector} from "react-redux";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 
 interface ModalType {

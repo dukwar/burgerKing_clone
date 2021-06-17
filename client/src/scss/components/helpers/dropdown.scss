@@ -20,6 +20,7 @@
   background-color: darken(#fff, 3%);
   padding: 60px;
   transition: all 350ms linear;
+  overflow-y: scroll;
 
   .menu {
     display: flex;
@@ -86,7 +87,8 @@
 
   .dropdownWindow {
     width: 100%;
-    padding: 20px;
+    height: 100%;
+    padding: 20px 20px 60px 20px;
 
     .menu {
       flex-direction: column;

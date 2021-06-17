@@ -1,12 +1,18 @@
 import React from "react";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
+import {Facebook, Instagram, Vkontakte, Youtube} from "./Sprites";
 
 interface DropdownType {
-    isOpen: boolean
+    isOpen: boolean,
+    handleOpenDropdown: () => void
 }
 
-const Dropdown = ({isOpen}: DropdownType) => {
+const Dropdown = ({isOpen, handleOpenDropdown}: DropdownType) => {
+
+    const handleClose = () => {
+        handleOpenDropdown()
+    }
 
 
     const classes = classNames(
@@ -20,29 +26,34 @@ const Dropdown = ({isOpen}: DropdownType) => {
                 <div className="menu">
                     <div className="menu__sideA">
                         <ul>
-                            <Link to="/home">
+                            <Link onClick={handleClose} to="/home">
                                 <li>
                                     <h3>Menu</h3>
                                 </li>
                             </Link>
-                            <Link to="/admin">
+                            <Link onClick={handleClose} to="/admin">
                                 <li>
                                     <h3>Add position</h3>
                                 </li>
                             </Link>
-                            <Link to={'/home'}>
+                            <Link onClick={handleClose} to={'/promo'}>
                                 <li>
-                                    <h3>King Club</h3>
+                                    <h3>Promo</h3>
                                 </li>
                             </Link>
-                            <Link to={'/home'}>
-                                <li>
-                                    <h3>Contacts</h3>
-                                </li>
-                            </Link>
-                            <Link to="/work">
+                            <Link onClick={handleClose} to="/work">
                                 <li>
                                     <h3>Work</h3>
+                                </li>
+                            </Link>
+                            <Link onClick={handleClose} to="/users">
+                                <li>
+                                    <h3>Users</h3>
+                                </li>
+                            </Link>
+                            <Link onClick={handleClose} to="/cart">
+                                <li>
+                                    <h3>Cart</h3>
                                 </li>
                             </Link>
                         </ul>
@@ -80,7 +91,46 @@ const Dropdown = ({isOpen}: DropdownType) => {
                         </ul>
                     </div>
                 </div>
+
+
+                <div className="footer__contacts">
+                    <div className="sideB">
+                        <div className="sideB__img"><img
+                            src="https://burgerking.ru/images/app_store.svg"
+                            alt="App Store"/></div>
+                        <div className="sideB__img">
+                            <img src="https://burgerking.ru/images/google_play.png"
+                                 alt="Google Play"/></div>
+                        <div className="sideB__img"><img
+                            src="https://burgerking.ru/images/huawei.png"
+                            alt="Huawei App Gallery"/></div>
+                    </div>
+
+                </div>
+                <div className="footer__social">
+                    <div className="social">
+                        <Instagram className="social__item"/>
+                    </div>
+                    <div className="social">
+                        <Facebook className="social__item"/>
+                    </div>
+                    <div className="social">
+                        <Vkontakte className="social__item"/>
+                    </div>
+                    <div className="social">
+                        <Youtube className="social__item"/>
+                    </div>
+                </div>
+                <div className="footer__bottom">
+                    <div className="roots">
+                        <p>
+                            © ООО «Бургер Рус», 2021. Все права защищены.<br/>
+                            TM & Copyright 2021 Burger King Corporation. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
             </div>
+
 
             {isOpen &&
             <div className="dropdown__container">

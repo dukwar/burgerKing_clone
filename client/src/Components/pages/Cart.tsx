@@ -1,12 +1,10 @@
 import React from 'react';
-import {CartItem} from "../index";
-import {useDispatch} from "react-redux";
-import {clearCart, removeCartItem, addLocalItem, removeLocalItem} from "../../Redux/actions/cart";
 import emptyCart from '../../assets/img/empty-cart.png'
 import {Link} from "react-router-dom";
 import Button from "../Button";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useCartActions} from "../../hooks/useActions";
+import CartItem from "../CartItem";
 
 function Cart() {
 
@@ -19,14 +17,14 @@ function Cart() {
     })
 
     const clearToCart = () => {
-        if (window.confirm('Вы действительно хотите удалить все пиццы?')) {
+        if (window.confirm('Вы действительно хотите удалить все товары?')) {
             clearCart()
 
         }
     }
 
     const onRemoveItem = (id:string) => {
-        if (window.confirm('Вы действительно хотите удалить пиццу?')) {
+        if (window.confirm('Вы действительно хотите удалить товар?')) {
             removeCartItem(id)
         }
     }
@@ -124,8 +122,8 @@ function Cart() {
                         <div className="cart cart--empty">
                             <h2>Корзина пустая 😕</h2>
                             <p>
-                                Вероятней всего, вы не заказывали ещё пиццу.<br/>
-                                Для того, чтобы заказать пиццу, перейди на главную страницу.
+                                Вероятней всего, вы еще ничего не добавляли.<br/>
+                                Для того, чтобы заказать покушать, перейдите на главную страницу.
                             </p>
                             <img src={emptyCart} alt="Empty cart"/>
 

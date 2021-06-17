@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import classNames from "classnames";
 import {useFixed} from "../../hooks/fixed.hook";
 import Category from "../Category/Category";
 import {useRequest} from "../../hooks/request.hook";
-import {getCategories} from "../../Redux/actions/burgers";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useBurgersActions} from "../../hooks/useActions";
 
@@ -16,9 +15,8 @@ interface HandleOffsetParams {
 
 function Home() {
 
-    // console.log('HOME RENDER')
     const {getCategories} = useBurgersActions()
-    const [activeLi, setActiveLi] = useState(0)
+    const [activeLi, setActiveLi] = useState<string>('Beef burgers')
     const {fixed} = useFixed()
     const {request} = useRequest()
 
@@ -27,11 +25,36 @@ function Home() {
         return burgers?.categories
     })
 
-    const handleOffset = ({target, name, index}: HandleOffsetParams): void => {
-        setActiveLi(index)
+
+    const handleActive = () => {
+        setTimeout(() => {
+            const elems = document.getElementsByClassName('category__title')
+            const items = Object.values(elems)
+
+            items.forEach(item => {
+                const offsetItem = item.getBoundingClientRect().top
+                if (offsetItem <= 180) {
+                    const name = item.innerHTML
+                    setActiveLi(name)
+                }
+            })
+        }, 500)
+    }
+
+    useEffect(() => {
+        document.addEventListener('scroll', handleActive)
+
+        return function () {
+            document.removeEventListener('scroll', handleActive)
+        }
+    }, [])
+
+    const handleOffset = ({target, name}: HandleOffsetParams): void => {
+        setActiveLi(name)
         const offset = target.offsetLeft
         const elScroll = document.getElementById("scrollUl")
         const elOffset = document.getElementById(name)
+
         const scrollTop = document.documentElement.scrollTop
         const menuHeight = scrollTop > 430 ? 70 : 0
         if (elOffset) {
@@ -62,7 +85,7 @@ function Home() {
                     <div id="contentMenu" className="content__top__menu">
                         <ul id="scrollUl">
                             {categories && categories.map(({name}, index) => {
-                                return <li className={activeLi === index ? "activeLi" : ""}
+                                return <li className={activeLi === name ? "activeLi" : ""}
                                            onClick={({target}) => handleOffset({
                                                target,
                                                name,
@@ -77,8 +100,9 @@ function Home() {
                 <div className="content__mid__title">
                     <h1>Menu</h1>
                 </div>
-                {categories && categories.map((item) => {
-                    return <Category id={item.id} name={item.name} value={item.value}/>
+                {categories && categories.map((item, index) => {
+                    console.log(item.name)
+                    return <Category id={item.name + index} name={item.name} value={item.value}/>
                 })}
             </div>
         </>

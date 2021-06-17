@@ -3,6 +3,7 @@ export type profileType = {
     accessToken: string,
     userId: string
     email: string
+    isActivated: boolean
 }
 
 // for message
@@ -93,6 +94,13 @@ export interface CategoryItemType {
 export interface addCategoryType {
     name: string,
     value: string
+}
+
+// for promo
+
+export interface promoType {
+    id: number,
+    img: string
 }
 
 

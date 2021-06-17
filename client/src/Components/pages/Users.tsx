@@ -3,7 +3,6 @@ import {useRequest} from "../../hooks/request.hook";
 import {Table} from "react-bootstrap";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useUsersActions} from "../../hooks/useActions";
-import {fetchApiUsers} from "../../Redux/actions/user";
 
 
 
@@ -13,12 +12,14 @@ const Users = () => {
     const {fetchApiUsers} = useUsersActions()
 
     const users = useTypesSelector(({user}) => {
-        return user.users
+        return user.users.users
     })
+
+    console.log(users)
 
     useEffect(() => {
       fetchApiUsers(request)
-    }, [])
+    }, [request])
 
 
     return (

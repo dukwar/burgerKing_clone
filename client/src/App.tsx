@@ -1,26 +1,27 @@
 import React, {useEffect, useState} from "react";
 import {useLocation} from 'react-router-dom'
 import './App.scss';
-import {Header} from "./Components";
 import {useRoutes} from "./hooks/routes.hook";
 import Slider from "./Components/Carousel/Carousel";
-import {useAuth} from "./hooks/auth.hook";
-import {useDispatch, useSelector} from "react-redux";
-import {authAction, checkAuth} from "./Redux/actions/auth";
+import {useDispatch} from "react-redux";
+import {checkAuth} from "./Redux/actions/auth";
 import Preloader from "./Components/componentHelpers/Preloader/Preloader";
 import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 import Message from "./Components/componentHelpers/Message";
+import {useTypesSelector} from "./hooks/useTypesSelector";
+
 
 
 function App() {
-    // console.log('APP RENDER')
 
     const location = useLocation()
     const dispatch = useDispatch()
-    const {profile, isAuth} = useSelector(({auth}) => auth)
+    const {isAuth} = useTypesSelector(({auth}) => auth)
+    const isActivate = useTypesSelector(({auth}) => auth.profile?.isActivated)
+
     const [ready, setReady] = useState(false)
-    const {login, logout, storageName} = useAuth()
-    // const isAuth = !!profile?.token
+
     const routes = useRoutes(isAuth)
 
     useEffect(() => {
@@ -31,7 +32,7 @@ function App() {
         setTimeout(() => {
             setReady(true)
         }, 1000)
-    }, [login, dispatch, storageName])
+    }, [])
 
 
     if (!ready) {
@@ -42,7 +43,7 @@ function App() {
         <div className="wrapper">
             {isAuth &&
         <>
-            <Header login={login} logout={logout} />
+            <Header />
             {location.pathname === '/home' && <Slider />}
         </>
             }
@@ -51,8 +52,6 @@ function App() {
             </div>
             {isAuth &&  <Footer />}
            <Message />
-
-
         </div>
 
     );

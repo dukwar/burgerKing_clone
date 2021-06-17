@@ -1,8 +1,8 @@
 import {FETCH_USERS} from "../constants";
-import {fetchUsersType, IUser} from "./types";
+import {fetchUsersType, IUserApi} from "./types";
 import {Dispatch} from "redux";
 
-export const fetchUsers = (users:IUser[]):fetchUsersType => {
+export const fetchUsers = (users:IUserApi):fetchUsersType => {
 
     return {
         type: FETCH_USERS,
@@ -11,7 +11,7 @@ export const fetchUsers = (users:IUser[]):fetchUsersType => {
 }
 
 export const fetchApiUsers =
-    (request: (url: string, method: string) => Promise<IUser[]>) =>
+    (request: (url: string, method: string) => Promise<IUserApi>) =>
        async (dispatch:Dispatch<fetchUsersType>) =>  {
             const res = await request(`/api/auth/users`, 'GET')
             dispatch(fetchUsers(res))

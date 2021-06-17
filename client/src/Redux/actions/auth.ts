@@ -1,5 +1,5 @@
 import {AUTH_ACTION, OPEN_ACTION} from "../constants";
-import {authActionType, IUser, openActionType} from "./types";
+import {authActionType, openActionType} from "./types";
 import {profileType} from "../reducers/types";
 import {Dispatch} from "redux";
 import axios from "axios";

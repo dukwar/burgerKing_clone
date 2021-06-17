@@ -2,11 +2,10 @@ import React, {useCallback, useEffect} from "react";
 import {useRequest} from "../../hooks/request.hook";
 import {Table} from "react-bootstrap";
 import Modal from "../componentHelpers/Modal";
-import {Button} from "../index";
 import {AddBurger} from "../componentHelpers/addingBurgers/AddingBurgers";
-import {deleteBurger, getBurgersAll, getCategories} from "../../Redux/actions/burgers";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useAuthActions, useBurgersActions} from "../../hooks/useActions";
+import Button from "../Button";
 
 
 

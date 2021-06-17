@@ -25,7 +25,7 @@ const navItems:navType[] = [
     {
         id: 4,
         title: 'Акции',
-        to: '/Promotions'
+        to: '/promo'
 
     },
 
@@ -48,11 +48,6 @@ const navItems:navType[] = [
     },
 ]
 
-interface TransitionProps {
-    key: boolean,
-    timeout: number
-
-}
 
 interface LocationState {
     from: {
