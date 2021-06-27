@@ -7,7 +7,7 @@ const cors = require('cors')
 const errorMiddleware = require('./middleware/error.middleware')
 
 const app = express()
-const PORT =  process.env.PORT || config.get('port') || 5000
+const PORT = process.env.PORT
 
 const publicPath = path.join(__dirname, 'client/build');
 
