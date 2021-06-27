@@ -9,9 +9,9 @@ const errorMiddleware = require('./middleware/error.middleware')
 const app = express()
 const PORT = process.env.PORT
 
-const publicPath = path.join(__dirname, 'client/build');
+// const publicPath = path.join(__dirname, 'client/build');
+// app.use(express.static(publicPath))
 
-app.use(express.static(publicPath))
 app.use(express.json({extended: true}))
 app.use(cookieParser())
 app.use(cors({
@@ -23,9 +23,16 @@ app.use('/api/burgers', require('./routes/burger.routes'))
 app.use('/api/category', require('./routes/category.routes'))
 app.use(errorMiddleware)
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
-});
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname+'client/build/index.html'));
+// });
 
 async function start(){
     try {
