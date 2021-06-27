@@ -1,20 +1,21 @@
-import React, {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {useRequest} from "../../hooks/request.hook";
 import {Table} from "react-bootstrap";
 import Modal from "../componentHelpers/Modal";
-import {AddBurger} from "../componentHelpers/addingBurgers/AddingBurgers";
+import {AddBurger} from "../componentHelpers/addBurger/AddBurger";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useAuthActions, useBurgersActions} from "../../hooks/useActions";
 import Button from "../Button";
-
+import AdminDesk from "../Admin/AdminDesk";
+import AdminMobile from "../Admin/AdminMobile";
 
 
 const Admin = () => {
-    console.log('RENDER ADMIN')
 
     const {request} = useRequest()
     const {deleteBurger, getBurgersAll, getCategories} = useBurgersActions()
     const {openAction} = useAuthActions()
+    const [mobileSize, setSize] = useState(false)
 
     const burgers = useTypesSelector(({burgers}) => {
         return burgers?.burgersAll
@@ -22,16 +23,34 @@ const Admin = () => {
 
 
     const handleDelete = useCallback((name) => {
-      deleteBurger(request, name)
+        deleteBurger(request, name)
         setTimeout(() => {
-           getBurgersAll(request)
+            getBurgersAll(request)
         }, 1000)
     }, [request])
+
+    const handleResize = () => {
+        console.log(document.documentElement.clientWidth)
+        if (document.documentElement.clientWidth < 768) {
+            setSize(true)
+        } else {
+            setSize(false)
+        }
+    }
 
     useEffect(() => {
         getCategories(request)
         getBurgersAll(request)
     }, [request])
+
+    useEffect(() => {
+        handleResize()
+        window.addEventListener('resize', handleResize)
+
+        return function () {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     const handleActiveOpen = () => {
         openAction()
@@ -40,45 +59,21 @@ const Admin = () => {
 
     return (
         <>
-            <div className="admin container offset-s4">
-
-
-                <Table style={{marginBottom: '50px'}} striped bordered hover>
-                    <thead>
-                    <tr>
-                        <th><p>#</p></th>
-                        <th><p>Название</p></th>
-                        <th><p>Категория</p></th>
-                        <th><p>Цена</p></th>
-                        <th><p>Удалить</p></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    {burgers.map((item, index) => {
-                        return <tr>
-                            <td><p>{index}</p></td>
-                            <td><p>{item.name}</p></td>
-                            <td><p>{item.category}</p></td>
-                            <td><p>{item.price}₽</p></td>
-                            <td>
-                                <Button onClick={() => handleDelete({name: item.name})}>
-                                    Удалить
-                                </Button>
-
-                            </td>
-                        </tr>
-                    })}
-                    </tbody>
-                </Table>
-                <Button className={"button__modalFooter"} onClick={handleActiveOpen}><h3>Add burger</h3></Button>
-            </div>
-
+            {mobileSize ?
+                <AdminMobile
+                    burgers={burgers}
+                    handleDelete={handleDelete}
+                    handleActiveOpen={handleActiveOpen} />
+                :
+                <AdminDesk
+                    burgers={burgers}
+                    handleDelete={handleDelete}
+                    handleActiveOpen={handleActiveOpen}
+                />
+            }
             <Modal>
                 <AddBurger/>
             </Modal>
-
-
         </>
     )
 }

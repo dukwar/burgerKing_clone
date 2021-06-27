@@ -1,0 +1,52 @@
+@import "../../variables";
+.navDrop {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  z-index: 2000;
+  width: 200px;
+  height: 250px;
+  border-radius: 1rem;
+  background-color: $white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  transition: all .2s ease-in-out;
+  animation: navDropOpen .3s ease-in-out;
+
+  .navDrop__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+
+    li {
+      height: 20%!important;
+      margin-left: 0!important;
+      animation: liDropOpen .6s ease-in-out;
+    }
+
+  }
+
+}
+
+@keyframes navDropOpen {
+  0% {
+    height: 0;
+  }
+
+  100% {
+   height: 250px;
+  }
+
+}
+
+@keyframes liDropOpen {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}

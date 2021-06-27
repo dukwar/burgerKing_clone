@@ -13,7 +13,6 @@ const Burger = ({onClick}:BurgerType) => {
                <div className="burger__item"/>
                <div className="burger__item"/>
                <div className="burger__item"/>
-
            </div>
 
         </>

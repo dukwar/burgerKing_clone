@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/swiper": "^5.4.2",
     "axios": "^0.21.1",
     "bootstrap": "4.6.0",
     "classnames": "^2.3.1",
+    "jarallax": "^1.12.7",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
@@ -22,6 +24,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
+    "swiper": "^6.7.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

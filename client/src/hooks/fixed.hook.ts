@@ -3,14 +3,15 @@ import {useEffect, useState} from "react";
 export const useFixed = () => {
 
     const [fixed, setFixed] = useState<boolean>(false)
-    let offsetTop = 0
+    let offsetTop = 409
 
     function handleResize() {
         const menu:HTMLElement | null = document.getElementById('contentMenu')
-        const slider:HTMLElement | null = document.getElementById('sliderId2')
-        const sliderHeight = slider?.offsetHeight
+        const slider:any = document.getElementsByClassName('swiper-container')
+        const sliderHeight = slider[0]?.offsetHeight
+        console.log(sliderHeight)
         if (menu && sliderHeight) {
-                offsetTop = 50 + sliderHeight
+                offsetTop = 100 + sliderHeight
 
         }
     }

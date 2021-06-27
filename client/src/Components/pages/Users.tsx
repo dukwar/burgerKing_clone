@@ -31,7 +31,6 @@ const Users = () => {
                     <tr>
                         <th><p>#</p></th>
                         <th><p>Почта</p></th>
-                        <th><p>id</p></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,7 +39,6 @@ const Users = () => {
                         return <tr>
                             <td><p>{index}</p></td>
                             <td><p>{item.email}</p></td>
-                            <td><p>{item._id}</p></td>
                         </tr>
                     })}
                     </tbody>

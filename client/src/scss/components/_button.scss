@@ -15,7 +15,7 @@
   @include noselect();
 
   &:focus {
-    background-color: orange;
+    background-color: $cart-button;
   }
 
 
@@ -32,6 +32,10 @@
 
     &:hover {
       background: none !important;
+    }
+
+    &:focus {
+      background-color: transparent;
     }
 
   }
@@ -130,7 +134,8 @@
     width: 450px;
     height: 50px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 
 
     h3 {
@@ -264,6 +269,22 @@
     background-color: #181818;
   }
 
+  &--instruction {
+    min-width: 250px;
+    min-height: 70px;
+    border-radius: 3rem;
+  }
+
+  &__kingClub {
+    border-radius: 3rem;
+    margin-top: 2rem;
+  }
+
+  &--deleteMobileItem {
+   width: 60%;
+    border-radius: 1rem;
+  }
+
 }
 
 @media (max-width: 654px) {
@@ -361,7 +382,7 @@
     }
 
     &__modalFooter {
-      width: 100%;
+      width: 60%;
 
       h3 {
         font-weight: 500;
@@ -413,4 +434,27 @@
       background-color: #181818;
     }
   }
+}
+
+@media (max-width: 425px) {
+
+  .button__modalFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+
+    h3 {
+      font-weight: 500;
+      font-size: 1.1rem!important;
+
+      color: $white !important;
+    }
+  }
+
 }

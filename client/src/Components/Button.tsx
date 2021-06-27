@@ -13,7 +13,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement & HTMLButtonElement 
     data?: string,
     onClick?: (e: React.MouseEvent<HTMLButtonElement>, id?: string) => void,
     className?: string
-
 }
 
 function Button({className, onClick, children, activeBut, data, id}:Props) {

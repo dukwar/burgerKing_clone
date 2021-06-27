@@ -1,8 +1,8 @@
-import React from "react";
-import {addBurgerToCart} from "../../Redux/actions/cart";
-import {useCartActions} from "../../hooks/useActions";
-import {CategoryItemType} from "../../Redux/reducers/types";
-import Button from "../Button";
+import React from "react"
+import {addBurgerToCart} from "../../Redux/actions/cart"
+import {useCartActions} from "../../hooks/useActions"
+import {CategoryItemType} from "../../Redux/reducers/types"
+import Button from "../Button"
 
 
 const CategoryItem = React.memo(({_id, name, picture, price}: CategoryItemType) => {
@@ -20,11 +20,9 @@ const CategoryItem = React.memo(({_id, name, picture, price}: CategoryItemType) 
         addBurgerToCart(obj)
     }
 
-
     return (
 
         <>
-
             <div className="category__item">
                 <div className="item__img">
                     <img src={picture} alt=""/>
@@ -40,8 +38,6 @@ const CategoryItem = React.memo(({_id, name, picture, price}: CategoryItemType) 
                     </Button>
                 </div>
             </div>
-
-
         </>
     )
 })

@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react"
 import {useLocation} from 'react-router-dom'
-import './App.scss';
-import {useRoutes} from "./hooks/routes.hook";
-import Slider from "./Components/Carousel/Carousel";
-import {useDispatch} from "react-redux";
-import {checkAuth} from "./Redux/actions/auth";
-import Preloader from "./Components/componentHelpers/Preloader/Preloader";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import Message from "./Components/componentHelpers/Message";
-import {useTypesSelector} from "./hooks/useTypesSelector";
+import './App.scss'
+import {useRoutes} from "./hooks/routes.hook"
+import {useDispatch} from "react-redux"
+import {checkAuth} from "./Redux/actions/auth"
+import Preloader from "./Components/componentHelpers/Preloader/Preloader"
+import Footer from "./Components/Footer"
+import Header from "./Components/Header"
+import Message from "./Components/componentHelpers/Message"
+import {useTypesSelector} from "./hooks/useTypesSelector"
+import HomeSwiper from "./Components/componentHelpers/HomeSwiper/HomeSwiper"
+
 
 
 
@@ -44,7 +45,7 @@ function App() {
             {isAuth &&
         <>
             <Header />
-            {location.pathname === '/home' && <Slider />}
+            {location.pathname === '/home' && <HomeSwiper />}
         </>
             }
             <div className="content">

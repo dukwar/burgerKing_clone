@@ -3,9 +3,8 @@
 .slider__container {
   width: 100%;
   height: 100%;
-  margin-top: 20px;
-  margin-bottom: 30px;
-
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   background-color: $main-background;
   overflow: hidden;
 }
@@ -26,6 +25,8 @@
     }
   }
 }
+
+
 
 
 @media (max-width: 765px) {

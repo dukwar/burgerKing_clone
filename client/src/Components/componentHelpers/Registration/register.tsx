@@ -9,8 +9,6 @@ import {useAuthActions} from "../../../hooks/useActions";
 export const Register = () => {
 
     const {request} = useRequest()
-
-
     const {authThunk, openAction} = useAuthActions()
     const [activeBut, setActiveBut] = useState<boolean>(true)
     const [toggle, setToggle] = useState<boolean>(true)
@@ -22,10 +20,10 @@ export const Register = () => {
         setActiveBut(!activeBut)
     }
     const handleMethod = (e: React.MouseEvent<HTMLButtonElement>, id: string | undefined): void => {
-        if (typeof id === "string") {
-            const el = document.getElementById(id)
-            if (el) {
-                const data = el.getAttribute('data')
+        if (id) {
+            const elInput = document.getElementById(id)
+            if (elInput) {
+                const data = elInput.getAttribute('data')
                 if (data) setMethod(data)
             }
         }
@@ -44,14 +42,16 @@ export const Register = () => {
         },
         onSubmit: (values) => {
             openAction()
-            alert(JSON.stringify(values, null, 2));
             authThunk(request, method, values)
         }
     })
 
     useEffect(() => {
+        const email = formik.values.email
+        const password = formik.values.password
+
         setTimeout(() => {
-            if (formik.values.email !== '' || formik.values.password !== '') {
+            if (email !== '' || password !== '') {
                 window.M.updateTextFields()
             }
         }, 610)
@@ -70,7 +70,6 @@ export const Register = () => {
                     <Button onClick={handleActiveBut}
                             className="button--modalHeader" activeBut={!activeBut}>
                         <p>Войти</p>
-
                     </Button>
                 </div>
                 <div onClick={handleActiveOpen} className="modalMain__header__cancel">
@@ -86,9 +85,7 @@ export const Register = () => {
                     {toggle ?
                         <div className="modalMain__body">
                             <h1>Fill in all the fields and let's move on!</h1>
-
                             <form className="regModal" onSubmit={formik.handleSubmit}>
-
                                 <div className="row">
                                     <h3>Email</h3>
                                     <div className="input-field col s12">
@@ -138,7 +135,6 @@ export const Register = () => {
                                         </h3>
                                     </Button>
                                 </div>
-
                             </form>
                         </div>
                         :

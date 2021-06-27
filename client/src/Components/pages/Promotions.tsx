@@ -25,11 +25,7 @@ const Promotions = () => {
                                     className="promo__item"
                                     alt=""/>
                             </>
-
-
                         }))}
-
-
                     </div>
                 </div>
             </div>

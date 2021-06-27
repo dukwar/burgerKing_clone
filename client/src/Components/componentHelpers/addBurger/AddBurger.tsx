@@ -1,5 +1,5 @@
-import Button from "../../Button";
 import React, {useEffect, useState} from "react";
+import Button from "../../Button";
 import {useRequest} from "../../../hooks/request.hook";
 import {useFormik} from "formik";
 import {Cancel} from "../Sprites";
@@ -22,8 +22,8 @@ export const AddBurger = () => {
         return burgers?.categories
     })
 
-    const [activeBut, setActiveBut] = useState(true)
-    const [toggle, setToggle] = useState(true)
+    const [activeBut, setActiveBut] = useState<boolean>(true)
+    const [toggle, setToggle] = useState<boolean>(true)
 
     const handleActiveBut = () => {
         setToggle(!toggle)
@@ -36,10 +36,8 @@ export const AddBurger = () => {
             price: 0,
             category: '',
             picture: ''
-
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
            addBurger(request, values)
         }
     })
@@ -47,12 +45,9 @@ export const AddBurger = () => {
     const formikCat = useFormik({
         initialValues: {
             name: '',
-            value: `${categories.length + 1}` as string,
-
-
+            value: `${categories.length + 1}`,
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
           addCategory(request, values)
         }
     })
@@ -69,12 +64,7 @@ export const AddBurger = () => {
 
 
     return (
-
-
-
         <>
-
-
             <div className="modalMain__header">
                 <div className="modalMain__group">
                     <Button onClick={handleActiveBut}
@@ -101,7 +91,6 @@ export const AddBurger = () => {
                     {toggle
                         ? <div className="modalMain__body">
                             <form className="regModal" onSubmit={formik.handleSubmit}>
-
                                 <div className="row">
                                     <h3>Наименование</h3>
                                     <div className="input-field col s12">
@@ -132,9 +121,8 @@ export const AddBurger = () => {
                                     </div>
                                 </div>
 
-
-                                <div className="select row">
-                                    <div className="input__select input-field col s12">
+                                <div className="row">
+                                    <div className="input-field col s12">
                                         <select
                                             id="category"
                                             name="category"
@@ -171,12 +159,10 @@ export const AddBurger = () => {
                                 </div>
 
                                 <div className="modalMain__footer">
-
                                     <Button className="button__modalFooter">
-                                        <h3>Добавить бургер</h3>
+                                        <h3>Add burger</h3>
                                     </Button>
                                 </div>
-
                             </form>
                         </div>
                         :
@@ -193,7 +179,6 @@ export const AddBurger = () => {
                                             className="regModal__input"
                                             onChange={formikCat.handleChange}
                                             value={formikCat.values.name}
-
                                         />
                                         <label htmlFor="name">Название</label>
                                     </div>
@@ -216,18 +201,13 @@ export const AddBurger = () => {
                                 </div>
 
                                 <div className="modalMain__footer">
-
                                     <Button className="button__modalFooter">
                                         <h3>Add category</h3>
                                     </Button>
                                 </div>
-
                             </form>
                         </div>
-
                     }
-
-
                 </CSSTransition>
             </SwitchTransition>
 

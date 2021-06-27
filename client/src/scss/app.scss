@@ -4,6 +4,7 @@
 @import './fonts';
 
 
+
 html, body {
   font-size: 16px;
 }
@@ -12,11 +13,12 @@ html, body {
   display: flex !important;
   flex-direction: column !important;
   min-height: 100vh;
-  margin: 0 auto;
   background-color: $main-background !important;
+  overflow: hidden;
 }
 
 .containerMain {
+  position: relative;
   max-width: $container-width;
   margin: 0 auto;
 

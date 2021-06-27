@@ -12,7 +12,7 @@ const Message = () => {
     if (isOpen) {
         setTimeout(() => {
             setMessage('', false)
-        }, 3000)
+        }, 2000)
     }
 
     return (
@@ -21,7 +21,6 @@ const Message = () => {
                 <div className="message__data">
                     <p>{message}</p>
                 </div>
-
             </div>
         </>
 

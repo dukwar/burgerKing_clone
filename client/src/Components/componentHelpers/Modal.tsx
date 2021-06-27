@@ -8,7 +8,6 @@ interface ModalType {
 
 const Modal = ({children}:ModalType) => {
 
-
     const isOpenDrop = useTypesSelector(({auth}) => auth.isOpen)
 
     if (isOpenDrop) {
@@ -16,8 +15,6 @@ const Modal = ({children}:ModalType) => {
     } else {
         document.body.style.overflow = ''
     }
-
-
 
     return (
         <>

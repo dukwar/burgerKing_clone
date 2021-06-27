@@ -1,10 +1,10 @@
-import React, {useEffect} from "react";
-import {getBurgers} from "../../Redux/actions/burgers";
-import {useRequest} from "../../hooks/request.hook";
-import CategoryItem from "./CategoryItem";
-import {useTypesSelector} from "../../hooks/useTypesSelector";
-import {burgerType, categoryType} from "../../Redux/reducers/types";
-import {useBurgersActions} from "../../hooks/useActions";
+import React, {useEffect} from "react"
+import {getBurgers} from "../../Redux/actions/burgers"
+import {useRequest} from "../../hooks/request.hook"
+import CategoryItem from "./CategoryItem"
+import {useTypesSelector} from "../../hooks/useTypesSelector"
+import {burgerType, categoryType} from "../../Redux/reducers/types"
+import {useBurgersActions} from "../../hooks/useActions"
 
 
 const Category = ({name, value}: categoryType) => {
