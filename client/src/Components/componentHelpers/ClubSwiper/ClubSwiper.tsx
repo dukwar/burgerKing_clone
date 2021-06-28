@@ -6,7 +6,7 @@ import {CrownData, SlideData} from "./ClubSwiperData";
 import {Crown} from "../Sprites";
 
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, Controller, EffectFlip]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, EffectFlip]);
 
 
 export default function ClubSwiper() {
@@ -35,7 +35,7 @@ export default function ClubSwiper() {
             >
                 {SlideData.map(({id, title, img, text}, index) => {
                     return  <SwiperSlide key={`${title}${id}`}>
-                        <img className="swiper-img" src={img} alt=""/>
+                        <img className="swiper-img club-img" src={img} alt=""/>
                         <h1 className="swiper-title">"{title}"</h1>
                         <p className="swiper-text">{text}</p>
                     </SwiperSlide>

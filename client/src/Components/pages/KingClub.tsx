@@ -45,9 +45,9 @@ const KingClub = () => {
                             <h1>New bonus program</h1>
                             <h2>Burger king app</h2>
                         </div>
-                        <div className="top__img">
+
                             <img src={burgerRobot} alt=""/>
-                        </div>
+
                     </div>
                 </div>
 

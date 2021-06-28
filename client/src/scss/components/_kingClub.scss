@@ -7,7 +7,7 @@
     position: relative;
     width: 100%;
     height: 650px;
-    background: url("../../assets/img/kingClubTop.jpg") bottom no-repeat;
+    background: url("../../assets/img/kingClubTop.jpg") center no-repeat;
     background-size: cover;
 
 
@@ -23,7 +23,6 @@
     }
 
     .top__content {
-      position: relative;
       display: flex;
       align-items: flex-start;
       width: 100%;
@@ -36,7 +35,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 50%;
+        width: 60%;
         height: 100%;
         text-transform: uppercase;
         z-index: 10;
@@ -62,22 +61,16 @@
         }
       }
 
-      .top__img {
-        display: flex;
-        width: 50%;
-        height: 400px;
-        z-index: 10;
-
         img {
           position: absolute;
-          bottom: -5.1rem;
           right: 5rem;
-
+          bottom: -5.1rem;
+          z-index: 10;
           width: 600px;
           height: 600px;
           object-fit: cover;
         }
-      }
+
     }
   }
 
@@ -161,13 +154,16 @@
       }
 
       &__bonus {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         .bonus__item {
           margin-top: 1.6rem;
 
           img {
+            width: 100%;
 
           }
         }
@@ -244,7 +240,7 @@
       justify-content: center;
 
       &__title {
-        max-width: 450px;
+        max-width: 470px;
 
         h1 {
           font-size: 2.5rem;
@@ -269,7 +265,6 @@
 
     &__top {
       .top__content {
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -294,23 +289,17 @@
           }
         }
 
-        .top__img {
-          display: flex;
-          width: 50%;
-          height: 400px;
-          z-index: 10;
+
 
           img {
             position: absolute;
             bottom: -5.1rem;
-            right: 4rem;
-
+            right: 0;
             width: 400px;
             height: 400px;
             object-fit: cover;
           }
         }
-      }
     }
   }
 }
@@ -319,6 +308,7 @@
 
 
   .club__welcome {
+    width: 100%;
     background: url("https://burgerking.ru/images/kingclub/welcome_bg_mobile.png") no-repeat center;
     background-size: 100% 100%;
 
@@ -365,7 +355,7 @@
         text-align: center;
 
         h1 {
-          font-size: 2.5rem;
+          font-size: 2.3rem;
           color: #fdfdfd;
 
         }
@@ -384,16 +374,44 @@
           width: 100%;
         }
       }
-
-
-
     }
   }
-
-
 }
 
 @media (max-width: 930px) {
+
+  .club__top {
+    .top__content {
+      padding: 1rem 1rem;
+
+      .top__title {
+        align-items: center;
+        text-align: center;
+
+        h1 {
+          line-height: 3rem;
+          font-size: 3.1rem;
+        }
+
+        h2 {
+          margin-top: 2rem;
+          font-size: 2.1rem;
+          line-height: 0;
+        }
+      }
+
+      img {
+        position: absolute;
+        bottom: -5.1rem;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
 
   .club__instruction {
     margin-top: 6rem;
@@ -454,18 +472,18 @@
         }
       }
 
-      .top__img {
-
-        img {
-          position: absolute;
-          bottom: -5.1rem;
-          right: 0;
-          left: -1rem;
-          width: 330px;
-          height: 330px;
-          object-fit: cover;
-        }
+      img {
+        position: absolute;
+        bottom: -3.1rem;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 290px;
+        height: 290px;
+        object-fit: cover;
       }
+
+
     }
   }
 
@@ -489,11 +507,12 @@
       &__bonus {
 
         .bonus__item {
-          width: 320px;
-          height: 220px;
+          width: 290px;
+          height: 190px;
           margin-top: 1.6rem;
 
           img {
+
 
           }
         }

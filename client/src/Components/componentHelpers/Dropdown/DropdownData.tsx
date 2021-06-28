@@ -34,6 +34,12 @@ export const menuSideA = [
         title: 'Cart',
         to: '/cart'
     },
+
+    {
+        id: 7,
+        title: 'KingClub',
+        to: '/kingclub'
+    },
 ]
 
 export const menuSideB = [

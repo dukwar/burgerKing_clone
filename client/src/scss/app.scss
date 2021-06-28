@@ -10,10 +10,10 @@ html, body {
 }
 
 .wrapper {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  background-color: $main-background !important;
+  background-color: $main-background;
   overflow: hidden;
 }
 

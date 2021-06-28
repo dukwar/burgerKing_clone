@@ -1,0 +1,130 @@
+//------------------------- templates -------------------//
+%bef-aft {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  transition: background-color 0.3s ease-in-out;
+  background-color: #3c3c3b;
+  right: 2px;
+  transform-origin: right;
+}
+
+%swiper-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfdfd;
+  border-radius: 50%;
+  box-shadow: 0px 0px 81px 5px rgba(34, 60, 80, 0.5);
+  padding: 0;
+  cursor: pointer;
+  border: none;
+
+}
+
+//-----------------------------------------------------------------//
+
+.swiper2-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1340px;
+  padding: 0 2%;
+
+}
+
+.swiper2 {
+  margin-top: 4%!important;
+  margin-bottom: 3%!important;
+}
+
+.swiper-home-slide {
+  position: relative;
+  overflow: hidden;
+  padding-right: 3%;
+}
+
+.home-slide {
+  display: flex;
+  min-width: 110px!important;
+  width: 100% !important;
+  height: 100%;
+  border-radius: 10px;
+  object-position: center;
+  object-fit: fill;
+}
+
+
+.swiperHome-button-prev {
+  @extend %swiper-btn;
+  left: 10px;
+
+  &:hover .btn-arrow-left:before, &:hover .btn-arrow-left:after {
+   background-color: darken(lawngreen, 12%);
+  }
+}
+
+.swiperHome-button-next {
+  @extend %swiper-btn;
+  right: 10px;
+
+  &:hover .btn-arrow-right:before, &:hover .btn-arrow-right:after {
+    background-color: darken(lawngreen, 12%);
+  }
+}
+
+.btn-arrow-right {
+  display: block;
+  width: 9px;
+  height: 14px;
+  position: relative;
+  transform: rotate(180deg);
+
+  &:before {
+    @extend %bef-aft;
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    @extend %bef-aft;
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+}
+
+.btn-arrow-left {
+  display: block;
+  width: 9px;
+  height: 14px;
+  position: relative;
+
+  &:before {
+    @extend %bef-aft;
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    @extend %bef-aft;
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .swiperHome-button-prev {
+    display: none;
+  }
+
+  .swiperHome-button-next {
+    display: none;
+  }
+}
