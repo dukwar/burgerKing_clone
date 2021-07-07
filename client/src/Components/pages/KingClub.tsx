@@ -12,7 +12,6 @@ const KingClub = () => {
 
     const handleResize = () => {
         const size = window.innerWidth
-        console.log(size)
         if (size < 1025) {
             setSize(true)
         } else {
@@ -45,9 +44,7 @@ const KingClub = () => {
                             <h1>New bonus program</h1>
                             <h2>Burger king app</h2>
                         </div>
-
                             <img src={burgerRobot} alt=""/>
-
                     </div>
                 </div>
 
@@ -130,7 +127,6 @@ const KingClub = () => {
 
                 <section className="club__conditions">
                     <div className="containerMain">
-                        
                         <div className="conditions">
                             <div className="conditions__title">
                                 <h1>Old points will not be lost</h1>
@@ -141,9 +137,9 @@ const KingClub = () => {
                             </div>
                             <div className="conditions__img">
                                 {mobileSize ?
-                                    <img src="	https://burgerking.ru/images/kingclub/migration_inner_mobile.png" alt=""/>
+                                    <img src="https://burgerking.ru/images/kingclub/migration_inner_mobile.png" alt="#"/>
                                     :
-                                    <img src="https://burgerking.ru/images/kingclub/migration_inner_desktop.png" alt=""/>
+                                    <img src="https://burgerking.ru/images/kingclub/migration_inner_desktop.png" alt="#"/>
                                 }
                             </div>
                         </div>

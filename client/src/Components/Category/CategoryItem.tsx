@@ -1,5 +1,4 @@
 import React from "react"
-import {addBurgerToCart} from "../../Redux/actions/cart"
 import {useCartActions} from "../../hooks/useActions"
 import {CategoryItemType} from "../../Redux/reducers/types"
 import Button from "../Button"

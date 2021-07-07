@@ -1,11 +1,9 @@
 import React, {useCallback, useEffect, useState} from "react";
 import {useRequest} from "../../hooks/request.hook";
-import {Table} from "react-bootstrap";
 import Modal from "../componentHelpers/Modal";
 import {AddBurger} from "../componentHelpers/addBurger/AddBurger";
 import {useTypesSelector} from "../../hooks/useTypesSelector";
 import {useAuthActions, useBurgersActions} from "../../hooks/useActions";
-import Button from "../Button";
 import AdminDesk from "../Admin/AdminDesk";
 import AdminMobile from "../Admin/AdminMobile";
 
@@ -30,7 +28,6 @@ const Admin = () => {
     }, [request])
 
     const handleResize = () => {
-        console.log(document.documentElement.clientWidth)
         if (document.documentElement.clientWidth < 768) {
             setSize(true)
         } else {

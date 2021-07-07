@@ -46,9 +46,6 @@ const AdminMobile = ({burgers, handleActiveOpen, handleDelete }:AdminDeskType) =
 
                    </div>
                </div>
-
-
-
            </section>
 
         </>

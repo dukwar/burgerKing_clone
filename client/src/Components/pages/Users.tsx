@@ -15,8 +15,6 @@ const Users = () => {
         return user.users.users
     })
 
-    console.log(users)
-
     useEffect(() => {
       fetchApiUsers(request)
     }, [request])
@@ -36,7 +34,7 @@ const Users = () => {
                     <tbody>
 
                     {users && users.map((item, index) => {
-                        return <tr>
+                        return <tr key={`user-${index}`}>
                             <td><p>{index}</p></td>
                             <td><p>{item.email}</p></td>
                         </tr>

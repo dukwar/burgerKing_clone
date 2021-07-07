@@ -21,15 +21,15 @@ const WSpoiler = ({id, title, subTitleOne, subTitleTwo, markerTextOne, markerTex
                 <div className={isOpen ? "spoiler active" : "spoiler"}>
                     <h4>{subTitleOne}</h4>
                     <ul>
-                        {markerTextOne && markerTextOne.map((item) => {
-                            return <li>{item}</li>
+                        {markerTextOne && markerTextOne.map((item, index) => {
+                            return <li key={`spoilerTextOne-${index}`}>{item}</li>
                         })}
                     </ul>
 
                     <h4>{subTitleTwo}</h4>
                     <ul>
-                        {markerTextTwo && markerTextTwo.map((item) => {
-                            return <li>{item}</li>
+                        {markerTextTwo && markerTextTwo.map((item, index) => {
+                            return <li  key={`spoilerTextTwo-${index}`}>{item}</li>
                         })}
                     </ul>
                 </div>

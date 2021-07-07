@@ -10,7 +10,7 @@ function ScrollToTop() {
         return () => {
             unListen()
         }
-    }, [])
+    }, [history])
 
     return null
 }

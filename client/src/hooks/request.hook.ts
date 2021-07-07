@@ -51,7 +51,6 @@ export const useRequest = ():useRequestType => {
                 throw new Error(res.data.message || 'Что-то пошло не так, попробуйте позднее!')
             }
 
-            console.log(res.data)
             if (!res.data.burgers && !res.data.categories) {
                 dispatch(setMessage(res.data.message, true))
             }

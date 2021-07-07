@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import SwiperCore, {Controller, Navigation, Pagination, Scrollbar, EffectFlip} from 'swiper';
+import SwiperCore, {Navigation, Pagination, Scrollbar, EffectFlip} from 'swiper';
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/swiper-bundle.css';
 import {CrownData, SlideData} from "./ClubSwiperData";
@@ -41,9 +41,7 @@ export default function ClubSwiper() {
                     </SwiperSlide>
                 })}
             </Swiper>
-
             <ul className="choice__crown">
-
                     {CrownData.map(({id, title}, index) => {
                         return <li onClick={() =>  handleNavSlide(index)} className={activeSlide === index ? "activeCrown" : ""} key={`${title}${id}`}>
                                 <span>{title}</span>

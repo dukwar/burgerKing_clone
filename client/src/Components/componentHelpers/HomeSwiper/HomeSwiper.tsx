@@ -25,7 +25,6 @@ export default function HomeSwiper() {
 
         for (let i = 0; i < res.length; i++) {
             const elSpan = document.createElement('span')
-            console.log(elSpan)
             const span = res[i].appendChild(elSpan)
             span.classList.add(classes[i])
         }
@@ -53,10 +52,10 @@ export default function HomeSwiper() {
                             spaceBetween={0}
                             slidesPerView={2.7}
                             loop={true}
-                            autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: false
-                            }}
+                            // autoplay={{
+                            //     delay: 3000,
+                            //     disableOnInteraction: false
+                            // }}
 
                             onInit={(swiper:any) => {
                                 swiper.params.navigation.prevEl = navigationPrevRef.current
@@ -69,7 +68,7 @@ export default function HomeSwiper() {
                         >
                             {HomeSlideData.map(({id, img}, index) => {
                                 return  <SwiperSlide className="swiper-home-slide" key={`homeSlide - ${id}`}>
-                                    <img className="swiper-img home-slide" src={img} alt=""/>
+                                    <img className="swiper-home-img" src={img} alt=""/>
                                 </SwiperSlide>
                             })}
                         </Swiper>

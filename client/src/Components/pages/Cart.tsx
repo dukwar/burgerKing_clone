@@ -82,14 +82,16 @@ function Cart() {
                             <div className="content__items">
 
                                 {
-                                    addedBurgers.map((obj) => <CartItem name={obj.name}
-                                                                       id={obj._id}
-                                                                       picture={obj.picture}
-                                                                       totalCount={items[obj._id].totalCount}
-                                                                       totalPrice={items[obj._id].totalPrice}
-                                                                       onRemoveItem={onRemoveItem}
-                                                                       onAddLocalItem={onAddLocalItem}
-                                                                       onRemoveLocalItem={onRemoveLocalItem}
+                                    addedBurgers.map((obj, index) => <CartItem
+                                        key={`cartBurger-${index}`}
+                                        name={obj.name}
+                                        id={obj._id}
+                                        picture={obj.picture}
+                                        totalCount={items[obj._id].totalCount}
+                                        totalPrice={items[obj._id].totalPrice}
+                                        onRemoveItem={onRemoveItem}
+                                        onAddLocalItem={onAddLocalItem}
+                                        onRemoveLocalItem={onRemoveLocalItem}
                                     />)
                                 }
 

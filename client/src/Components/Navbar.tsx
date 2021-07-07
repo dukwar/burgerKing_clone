@@ -100,7 +100,7 @@ const Navbar = ({fixed}:fixedProps) => {
                     <div className="navBlock">
                         <ul>
                             {navItems.map((item, index) =>
-                                <Link to={item.to}>
+                                <Link key={`navItem-${index}`} to={item.to}>
                                     <li className={path === item.to ? 'active' : ''}>{item.title}
                                     </li>
                                 </Link>)}
@@ -118,7 +118,7 @@ const Navbar = ({fixed}:fixedProps) => {
                             <div className="navBlock">
                                 <ul>
                                     {navItems.map((item, index) =>
-                                        <Link to={item.to}>
+                                        <Link key={`navItem-${index}`} to={item.to}>
                                             <li className={path === item.to ? 'active' : ''}>{item.title}
                                             </li>
                                         </Link>)}
@@ -150,7 +150,7 @@ const Navbar = ({fixed}:fixedProps) => {
                                         <div className="navBlock">
                                             <ul>
                                                 {navItems.map((item, index) =>
-                                                    <Link to={item.to}>
+                                                    <Link key={`navItem-${index}`} to={item.to}>
                                                         <li className={path === item.to ? 'active' : ''}>{item.title}
                                                         </li>
                                                     </Link>)}

@@ -55,7 +55,7 @@ const Footer = () => {
                         </div>
                         <div className="politic">
                             <p>
-                                <a href="">Политика обработки персональных данных</a>
+                                <a href="#">Политика обработки персональных данных</a>
                             </p>
                         </div>
                         <div className="developer">

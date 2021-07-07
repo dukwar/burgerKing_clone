@@ -9,7 +9,7 @@ export const useFixed = () => {
         const menu:HTMLElement | null = document.getElementById('contentMenu')
         const slider:any = document.getElementsByClassName('swiper-container')
         const sliderHeight = slider[0]?.offsetHeight
-        console.log(sliderHeight)
+
         if (menu && sliderHeight) {
                 offsetTop = 100 + sliderHeight
 

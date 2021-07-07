@@ -19,6 +19,9 @@ function Home() {
     const categories = useTypesSelector(({burgers}) => {
         return burgers?.categories
     })
+    const burgers = useTypesSelector(({burgers}) => {
+        return burgers?.burgers
+    })
 
     useEffect(() => {
         getCategories(request)
@@ -37,7 +40,7 @@ function Home() {
                     <div id="contentMenu" className="content__top__menu">
                         <ul id="scrollUl">
                             {categories && categories.map(({name}, index) => {
-                                return <li className={activeLi === name ? "activeLi" : ""}
+                                return <li key={`catMenu-${index}`} className={activeLi === name ? "activeLi" : ""}
                                            onClick={() => handleOffset(name)}>{name}</li>
                             })}
                         </ul>
@@ -49,7 +52,10 @@ function Home() {
                     <h1>Menu</h1>
                 </div>
                 {categories && categories.map((item, index) => {
-                    return <Category id={item.name + index} name={item.name} value={item.value}/>
+                    if (burgers && !burgers[item.value]) {
+                        return null
+                    }
+                    return <Category key={`cat-${index}`} id={item.name + index} name={item.name} value={item.value}/>
                 })}
             </div>
         </>

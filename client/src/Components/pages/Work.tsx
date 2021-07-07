@@ -38,6 +38,7 @@ function Work() {
                         {workData
                             .map(({id, title, subTitleOne, subTitleTwo, markerTextOne, markerTextTwo, isOpen}) => {
                             return <WSpoiler
+                                key={`work-${id}`}
                                 id={id}
                                 title={title}
                                 subTitleOne={subTitleOne}

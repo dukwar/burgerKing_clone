@@ -1,7 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import {Link} from "react-router-dom";
-import {Facebook, Instagram, Vkontakte, Youtube} from "../Sprites";
 import DropdownFooter from "./DropdownFooter";
 import DropdownMenu from "./DropdownMenu";
 

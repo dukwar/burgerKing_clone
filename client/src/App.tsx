@@ -19,7 +19,6 @@ function App() {
     const location = useLocation()
     const dispatch = useDispatch()
     const {isAuth} = useTypesSelector(({auth}) => auth)
-    const isActivate = useTypesSelector(({auth}) => auth.profile?.isActivated)
 
     const [ready, setReady] = useState(false)
 

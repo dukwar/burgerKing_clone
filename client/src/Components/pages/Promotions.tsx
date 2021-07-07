@@ -14,17 +14,15 @@ const Promotions = () => {
                 <div className="containerMain">
                     <h1>Promo</h1>
                     <div className="promo__inner">
-                        {promoItems.map((item => {
-                            return <>
-
-                                <LazyLoadImage
-                                    key={item.id}
+                        {promoItems.map(((item, index) => {
+                            return <LazyLoadImage
+                                    key={`promo-${index}`}
                                     src={item.img}
                                     effect='opacity'
                                     id={'imgRef'}
                                     className="promo__item"
                                     alt=""/>
-                            </>
+
                         }))}
                     </div>
                 </div>

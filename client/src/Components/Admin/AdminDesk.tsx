@@ -25,7 +25,7 @@ const AdminDesk = ({burgers, handleActiveOpen, handleDelete }:AdminDeskType) => 
                 <tbody>
 
                 {burgers.map(({name, category, price}, index) => {
-                    return <tr>
+                    return <tr key={`adminDesk-${index}`}>
                         <td><p>{index}</p></td>
                         <td><p>{name}</p></td>
                         <td><p>{category}</p></td>
