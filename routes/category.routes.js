@@ -7,10 +7,7 @@ router.post('/generate', async (req, res) => {
 
     try {
 
-        console.log('Data', req.body)
         const {name, value} = req.body
-
-
         const existing = await Category.findOne({name})
 
         if (existing) {

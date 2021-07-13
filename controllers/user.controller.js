@@ -12,7 +12,6 @@ class UserController {
             }
 
             const {email, password} = req.body
-            console.log(email, password)
             const userData = await userService.registration(email, password)
 
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
@@ -53,9 +52,7 @@ class UserController {
         try {
 
             const activationLink = req.params.link
-            console.log(activationLink)
             await userService.activate(activationLink)
-            console.log(config.get('clientUrl'))
             return res.redirect('https://vk.com/im?sel=c526')
 
         } catch (e) {

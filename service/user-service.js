@@ -16,7 +16,6 @@ class UserService {
         }
 
         const hashedPassword = await bcrypt.hash(password, 12)
-        console.log(hashedPassword)
         const activationLink = uuid.v4()
         const user = await User.create({email, password: hashedPassword, activationLink})
         await mailService.sendActivationMail(email, `${config.get('baseUrl')}/api/auth/activate/${activationLink}`)
@@ -31,7 +30,6 @@ class UserService {
     async activate(activationLink) {
         const user = await User.findOne({activationLink})
         if (!user) {
-            console.log('Hello')
             throw ApiError.BadRequest('Неккоректная ссылка для активации')
         }
         user.isActivated = true
